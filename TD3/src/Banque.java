@@ -63,12 +63,10 @@ public class Banque {
 	}
 	
 	public boolean deposer(long n, Argent montant){
-<<<<<<< HEAD
 		if(aCompte(n)){
 			
 		}
 		return false;
-=======
 		int i=trouverCompte(n);
 		if(i==-1){
 			return false;
@@ -89,6 +87,5 @@ public class Banque {
 		else {
 			return false;
 		}
->>>>>>> 8817007da11832618ef3704914b9276ef6f0ba9c
 	}
 }
