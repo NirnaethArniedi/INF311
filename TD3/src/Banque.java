@@ -36,10 +36,11 @@ public class Banque {
 	}
 	
 	public Argent soldeDeCompte(long numero){
-		if(trouverCompte(numero)==-1)
+		int i=trouverCompte(numero);
+		if(i==-1)
 			return null;
 		else
-			return this.comptes[trouverCompte(numero)].solde;
+			return this.comptes[i].solde;
 	}
 	
 	public void afficher( ){
@@ -63,10 +64,6 @@ public class Banque {
 	}
 	
 	public boolean deposer(long n, Argent montant){
-		if(aCompte(n)){
-			
-		}
-		return false;
 		int i=trouverCompte(n);
 		if(i==-1){
 			return false;
