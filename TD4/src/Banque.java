@@ -1,8 +1,11 @@
 import tc.TC;
 public class Banque {
+	
 	public final String nom;
 	private final Compte[] comptes;
 	private int nombreDeComptes;
+	
+	
 	public Banque(String nom, int maxComptes){
 		this.nom=nom;
 		this.comptes=new Compte[maxComptes];
@@ -11,6 +14,16 @@ public class Banque {
 	public String toString( ){
 		return "BANQUE "+this.nom;
 		
+	}
+	
+	/////////////////////////////////////
+	
+	public Argent soldeDeCompte(long numero){
+		int i=trouverCompte(numero);
+		if(i==-1)
+			return null;
+		else
+			return this.comptes[i].solde;
 	}
 	
 	public int trouverCompte(long numero){
@@ -33,14 +46,6 @@ public class Banque {
 			return true;
 		}
 		return false;
-	}
-	
-	public Argent soldeDeCompte(long numero){
-		int i=trouverCompte(numero);
-		if(i==-1)
-			return null;
-		else
-			return this.comptes[i].solde;
 	}
 	
 	public void afficher( ){
@@ -83,6 +88,8 @@ public class Banque {
 		return true;
 	}
 	**/
+	
+	
 	public Liquide retirer(long n, Argent montant){
 		int i=trouverCompte(n);
 		if(i==-1){
@@ -134,5 +141,32 @@ public class Banque {
 			if(comptes[i]!=null){
 				comptes[i].retraitCumulatifAujourdhui=new Argent("0.0");
 			}
+	}
+	
+
+    public static final char APPROUVE = 'A';
+    public static final char EMETTEUR_INCONNU = 'E';
+    public static final char DESTINATAIRE_INCONNU = 'D';
+    public static final char SOLDE_INSUFFISANT = 'S';
+    public static final char LIMITE_ATTEINTE = 'L'; 
+	
+	public char virer(long emetteur, long dest, Argent montant){
+		int em=trouverCompte(emetteur);
+		int de=trouverCompte(dest);
+		if(em==-1)
+			return EMETTEUR_INCONNU;
+		if(de==-1)
+			return DESTINATAIRE_INCONNU;
+		if(montant.estPlusGrandQue(comptes[em].solde))
+			return SOLDE_INSUFFISANT;
+		if(!(comptes[em].limite==null||(comptes[em].limite.estPlusGrandQue(comptes[em].retraitCumulatifAujourdhui.plus(montant))||comptes[em].limite.equals(comptes[em].retraitCumulatifAujourdhui.plus(montant))))){
+				return LIMITE_ATTEINTE;
+		}
+		else{
+			comptes[em].solde=comptes[em].solde.moins(montant);
+			comptes[em].retraitCumulatifAujourdhui=comptes[em].retraitCumulatifAujourdhui.plus(montant);
+			comptes[de].solde=comptes[de].solde.plus(montant);
+			return APPROUVE;
+		}
 	}
 }
