@@ -1,4 +1,4 @@
-public class Liquide {
+public class Liquide implements ArgentPhysique {
 	private static final long[] VALS = new long[]{
 		10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1
 	};
@@ -20,8 +20,14 @@ public class Liquide {
 	}
 
     public Argent montant( ) {
-        // __ COMPLETER__
-        return null;
+        long cmp=0;
+    	for(int i = 0; i < 13; i++){
+    		cmp+=coeffs[i]*VALS[i];
+    	}
+    	long diff= cmp-100*(cmp/100);
+    	int cent = (int) diff;
+        Argent mont=new Argent(cmp/100,cent);
+    	return mont;
     }
 
 	public String toString( ) {

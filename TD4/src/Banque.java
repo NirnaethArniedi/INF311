@@ -63,6 +63,17 @@ public class Banque {
 		return bank;
 	}
 	
+	public boolean deposer(long n, ArgentPhysique ap){
+		int i = trouverCompte(n);
+		if(i == -1){
+			return false;
+		}
+		else{
+			comptes[i].solde=comptes[i].solde.plus(ap.montant());
+			return true;
+		}
+	}
+	/*
 	public boolean deposer(long n, Argent montant){
 		int i=trouverCompte(n);
 		if(i==-1){
@@ -71,23 +82,25 @@ public class Banque {
 		comptes[i].solde=comptes[i].solde.plus(montant);
 		return true;
 	}
-	
-	public boolean retirer(long n, Argent montant){
+	**/
+	public Liquide retirer(long n, Argent montant){
 		int i=trouverCompte(n);
 		if(i==-1){
-			return false;
+			return null;
 		}
 		else if(comptes[i].solde.estPlusGrandQue(montant)||comptes[i].solde.equals(montant)){
-			if(comptes[i].limite.estPlusGrandQue(comptes[i].retraitCumulatifAujourdhui.plus(montant))){
+			if(comptes[i].limite==null||comptes[i].limite.estPlusGrandQue(comptes[i].retraitCumulatifAujourdhui.plus(montant))||comptes[i].limite.equals(comptes[i].retraitCumulatifAujourdhui.plus(montant))){
 				comptes[i].solde=comptes[i].solde.moins(montant);
-				return true;
+				comptes[i].retraitCumulatifAujourdhui=comptes[i].retraitCumulatifAujourdhui.plus(montant);
+				Liquide som=new Liquide(montant);
+				return som;
 			}
 			else{
-				return false;
+				return null;
 			}
 		}
 		else {
-			return false;
+			return null;
 		}
 	}
 	

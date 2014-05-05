@@ -1,4 +1,4 @@
-public class Cheque {
+public class Cheque implements ArgentPhysique {
 
 	public final long euros;
 	public final int centimes;
@@ -11,8 +11,8 @@ public class Cheque {
 	}
 
     public Argent montant( ) {
-        // __COMPLETER__
-        return null;
+        Argent valeur = new Argent(this.euros,this.centimes);
+        return valeur;
     }
 	
 	public String toString( ) {

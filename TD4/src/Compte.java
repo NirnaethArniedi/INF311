@@ -21,7 +21,7 @@ public class Compte {
 		this.solde=a;
 		this.nom=mots[2];
 		this.limite=null;
-		this.retraitCumulatifAujourdhui =new Argent("0");
+		this.retraitCumulatifAujourdhui =new Argent("0.0");
 	}
 	
 	public String toString( ){

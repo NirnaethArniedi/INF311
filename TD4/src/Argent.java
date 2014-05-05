@@ -14,7 +14,7 @@ public class Argent {
 		
 	}
 	// utile pour l'exercice 10
-	private Argent(long c) {
+	public Argent(long c) {
 		this.valeur = c;
 	}
 
