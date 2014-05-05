@@ -1,0 +1,8 @@
+Caisse_d'Eponge
+6
+312398740 987123981723.01 Jean-Francois_Poireau
+298172330 12.01 Kiran_Kohlrabi
+198172380 1293887.72 Lola_Mouchez
+987123120 23487.33 Marla_Singer
+1010101010 0.00 Distributeur_CdE-0
+1010101011 0.00 Distributeur_CdE-1

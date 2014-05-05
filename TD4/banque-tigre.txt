@@ -1,0 +1,7 @@
+Credit_du_Tigre
+5
+123112 5.00 Charles_de_Coelacanthe
+321122 2156.73 Alice_Dessinges
+234112 1003.23 Hyppolite_Megatherium
+1000000002 10000000.00 Proxy_1
+1010101012 0.00 Distributeur_A
