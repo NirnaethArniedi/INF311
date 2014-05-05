@@ -1,14 +1,15 @@
 import tc.TC;
-public class Banque {
+public class Banque implements Quotidien{
 	
 	public final String nom;
 	private final Compte[] comptes;
 	private int nombreDeComptes;
 	
 	
-	public Banque(String nom, int maxComptes){
+	public Banque(Horloge h,String nom, int maxComptes){
 		this.nom=nom;
 		this.comptes=new Compte[maxComptes];
+		h.inscrire(this);
 	}
 	
 	public String toString( ){
@@ -57,9 +58,9 @@ public class Banque {
 		}
 	}
 	
-	public static Banque lireBanque( ){
+	public static Banque lireBanque(Horloge h){
 		Banque bank;
-		bank=new Banque(TC.lireLigne(),Integer.parseInt(TC.lireLigne( )));
+		bank=new Banque(h,TC.lireLigne(),Integer.parseInt(TC.lireLigne( )));
 		
 		for(int i=0; i<bank.comptes.length;i++){
 			Compte c=new Compte(TC.lireLigne());

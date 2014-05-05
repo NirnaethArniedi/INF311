@@ -1,17 +1,18 @@
-public class Distributeur {
+public class Distributeur implements Quotidien{
     public String nom;
     private Banque banque;
     private final long numeroDistributeur;
     public final Liquide capacite;
     private Liquide billets;
      
-    public Distributeur(Banque b, String nom, long numeroDistributeur, Liquide capacite) {
+    public Distributeur(Horloge h,Banque b, String nom, long numeroDistributeur, Liquide capacite) {
         this.nom = nom;
         this.banque = b;
         this.numeroDistributeur = numeroDistributeur;
         assert(this.banque.aCompte(this.numeroDistributeur));
         this.capacite = capacite;
         this.recharger( );
+        h.inscrire(this);
     }
     
     private void recharger( ) {
@@ -60,4 +61,10 @@ public class Distributeur {
     	}
     	return null;
     }
+    
+    public void minuit(){
+    	recharger();
+    }
+    
+    
 }
