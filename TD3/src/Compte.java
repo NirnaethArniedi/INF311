@@ -20,6 +20,8 @@ public class Compte {
 		Argent a=new Argent(mots[1]);
 		this.solde=a;
 		this.nom=mots[2];
+		this.limite=null;
+		this.retraitCumulatifAujourdhui =new Argent("0");
 	}
 	
 	public String toString( ){

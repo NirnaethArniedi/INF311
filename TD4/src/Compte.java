@@ -3,11 +3,15 @@ public class Compte {
 	public final String nom;
 	public final long numero;
 	public Argent solde;
-	
+	public Argent limite;
+	public Argent retraitCumulatifAujourdhui;
 	public Compte(String nom, long numero, Argent montant) {
+		
 		this.nom = nom;
 		this.numero = numero;
 		this.solde = montant;
+		this.limite = null;
+		this.retraitCumulatifAujourdhui =new Argent("0.0");
 	}
 	
 	public Compte(String str){
@@ -16,6 +20,8 @@ public class Compte {
 		Argent a=new Argent(mots[1]);
 		this.solde=a;
 		this.nom=mots[2];
+		this.limite=null;
+		this.retraitCumulatifAujourdhui =new Argent("0");
 	}
 	
 	public String toString( ){
