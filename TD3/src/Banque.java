@@ -78,11 +78,48 @@ public class Banque {
 			return false;
 		}
 		else if(comptes[i].solde.estPlusGrandQue(montant)||comptes[i].solde.equals(montant)){
-			comptes[i].solde=comptes[i].solde.moins(montant);
-			return true;
+			if(comptes[i].limite.estPlusGrandQue(comptes[i].retraitCumulatifAujourdhui.plus(montant))){
+				comptes[i].solde=comptes[i].solde.moins(montant);
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 		else {
 			return false;
 		}
+	}
+	
+	public Argent getLimite(long numeroClient){
+		int i=trouverCompte(numeroClient);
+		if(i==-1){
+			return null;
+		}
+		else{
+			return comptes[i].limite;
+		}
+	}
+	
+	public void setLimite(long numeroClient, Argent limite){
+		int i =trouverCompte(numeroClient);
+		if(!(i==-1)){
+			comptes[i].limite=limite;
+		}
+	}
+	
+	public void setLimiteGlobale(Argent limite){
+		for(int i=0; i<comptes.length;i++){
+			if(comptes[i]!=null){
+				comptes[i].limite=limite;
+			}
+		}
+	}
+	
+	public void minuit(){
+		for(int i=0; i<comptes.length;i++)
+			if(comptes[i]!=null){
+				comptes[i].retraitCumulatifAujourdhui=new Argent("0");
+			}
 	}
 }
