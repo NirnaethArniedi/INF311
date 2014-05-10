@@ -22,6 +22,7 @@ public class Test05 implements Quotidien {
 		TC.println("-- test inscrire [5..13] (devrait agrandir)");
 		while(i < 13) {
 			h.inscrire(new Test05(i++));
+			TC.println(i);
 		}
 		TC.println("-- test rappeler( ) : attend 'minuit ici : i', 0 <= i < 13");
 		h.rappeler( );
