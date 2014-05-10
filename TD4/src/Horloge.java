@@ -16,16 +16,15 @@ public class Horloge {
 	}
 	
 	public void inscrire(Quotidien q){
-		int i=0;
-		while(i<this.rappels.length&&rappels[i]!=null)
-			i+=1;
-		if(i==this.rappels.length){
-			aggrandir(1);
-			this.rappels[i]=q;
+		for(int i=0; i<this.rappels.length; i++){
+			if(this.rappels[i]==null){
+				this.rappels[i]=q;
+				return;
+			}
 		}
-		else{
-			this.rappels[i]=q;
-		}
+		int n=this.rappels.length;
+		aggrandir(n);
+		this.rappels[n]=q;
 	}
 	
 	public void rappeler(){
