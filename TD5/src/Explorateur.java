@@ -1,4 +1,4 @@
-import tc.TC;
+//import tc.TC;
 
 public class Explorateur {
 

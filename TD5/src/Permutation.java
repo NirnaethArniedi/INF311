@@ -26,13 +26,41 @@ public class Permutation {
 	}
 	
 	public static int[] inserer(int[] t, int i){
-		//A MODIFIER
-		return null;
+		int n = t.length+1;
+		int[] tab = new int[n];
+		for(int p = 0 ; p < i ; p++)
+			tab[p] = t[p];
+		tab[i]=n;
+		for(int p = i+1; p < n ; p++)
+			tab[p] = t[p-1];
+		return tab;
+	}
+	
+	private static int fact(int n){
+		if(n==0)
+			return 1;
+		else
+			return n*fact(n-1);
 	}
 	
 	public static int[][] listePermutations(int n){
-		//A MODIFIER
-		return null;
+		if(n==0)
+			return null;
+		int[][] liPe = new int[fact(n)][n];
+		if(n==1){
+			liPe[0][0] = 1;
+		}
+		else{
+			int c = 0;
+			int[][] listPermMoinUn=listePermutations(n-1);
+			for(int i = 0; i < fact(n-1); i++){
+				for(int k = 0; k < n ; k++){
+					liPe[c]=inserer(listPermMoinUn[i],k);
+					c+=1;
+				}
+			}
+		}
+		return liPe;
 	}
 	
 	public static int[] nextPermutation(int[] t){
