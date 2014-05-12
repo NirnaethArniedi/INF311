@@ -27,7 +27,17 @@ public class HuitReines {
    *          de la reine a placer (et tester)
    */
   public static void ajouteNouvelleReine(Echiquier echiquier, int indiceReine) {
-	// A COMPLETER (exo3)
+	  if(indiceReine==echiquier.taille){
+		  echiquier.estUneSolution();
+		  return;
+	  }
+	  for(int k=0; k<echiquier.taille; k++){
+		  echiquier.placeReine(indiceReine,k);
+		  if(echiquier.estEnConflit(indiceReine))
+			  return;
+		  ajouteNouvelleReine(equiquier, indiceReine+1);
+	  }
+	  
   }
 
   public static void main(String[] args) {
