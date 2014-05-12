@@ -7,7 +7,7 @@ public class Palindromes{
 
     public static boolean estPalindrome(String mot, int g, int d){
     	if(mot.length()==0)
-    		return false;
+    		return true;
     	boolean test=mot.charAt(g)==mot.charAt(d);
     	if(g == d)
     		return true;
