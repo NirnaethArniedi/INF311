@@ -23,8 +23,18 @@ public class Decryptage {
 		TC.println();
 	}
 	
+	private static int fact(int n){
+		if(n==0)
+			return 1;
+		else
+			return n*fact(n-1);
+	}
+	
 	public static void decodeToutes(String msg, int n){
-		//A MODIFIER
+		int[][] liPe;
+		liPe=Permutation.listePermutations(n);
+		for(int i = 0;i<fact(n);i++)
+			decode(msg,liPe[i]);
 		return;
 	}
 

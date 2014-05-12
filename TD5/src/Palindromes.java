@@ -9,10 +9,10 @@ public class Palindromes{
     	if(mot.length()==0)
     		return true;
     	boolean test=mot.charAt(g)==mot.charAt(d);
+    	if(g >= d)
+    		return true;
     	if(g == d)
     		return true;
-    	if(d == g+1)
-    		return test;
     	if(test)
     		return(estPalindrome(mot,g+1,d-1));
     	return false;
