@@ -6,12 +6,26 @@ public class Palindromes{
     }
 
     public static boolean estPalindrome(String mot, int g, int d){
-        //À compléter
-	return false;
+    	if(mot.length()==0)
+    		return false;
+    	boolean test=mot.charAt(g)==mot.charAt(d);
+    	if(g == d)
+    		return true;
+    	if(d == g+1)
+    		return test;
+    	if(test)
+    		return(estPalindrome(mot,g+1,d-1));
+    	return false;
     }
 
     public static void traiter(){
- 	//À compléter
+    	String ligne1 = TC.lireLigne();
+    	int n = Integer.parseInt(ligne1);
+    	for(int i = 0; i<n; i++){
+    		String mot = TC.lireLigne();
+    		if(estPalindrome(mot))
+    			TC.println(mot);
+    	}
 	return;
     }
 

@@ -1,0 +1,7 @@
+pgcd : 3
+pgcd : 423544353463456
+pgcd : 96542309483
+pgcd : 1
+pgcd : 19
+pgcd : 1
+pgcd : 0
