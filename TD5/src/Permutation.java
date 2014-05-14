@@ -66,6 +66,8 @@ public class Permutation {
 	}
 	
 	public static int[] nextPermutation(int[] t){
+		if(t==null)
+			return null;
 		int n = t.length;
 		if(n==0)
 			return null;
