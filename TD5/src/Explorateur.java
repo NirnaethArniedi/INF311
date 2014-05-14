@@ -28,6 +28,7 @@ public class Explorateur {
 
 	public boolean exploreCasePourSortir(Case c) {
 		if(c.estSortie()){
+			c.marqueVue();
 			c.marqueChemin();
 			return true;
 		}

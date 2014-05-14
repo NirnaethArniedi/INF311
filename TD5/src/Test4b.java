@@ -5,7 +5,7 @@ public class Test4b {
 	public static void main(String[] args) {
 		//Labyrinthe laby = new Labyrinthe("labyrinthe2.txt");
 		double p=0.42;
-		Labyrinthe laby = new Labyrinthe(41, 41, p);
+		Labyrinthe laby = new Labyrinthe(40, 30, 0.5);
 		
 		Explorateur explo = new Explorateur(laby);
 
