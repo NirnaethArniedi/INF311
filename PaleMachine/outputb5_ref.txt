@@ -1,0 +1,23 @@
+MOT=losangeles
+URL=lakers.com SCORE=8635
+URL=latourdargentdrive.com SCORE=436
+MOT=informations
+URL=nubuk.fr SCORE=13870
+URL=alattaque.fr SCORE=8410
+MOT=informations
+URL=nubuk.fr SCORE=13870
+URL=alattaque.fr SCORE=8410
+MOT=debut
+URL=monagenda.com SCORE=9247
+URL=martinealaplage.fr SCORE=2967
+MOT=pourquoi
+URL=gouvernement.fr SCORE=4467
+URL=fcbarcelone.com SCORE=3590
+MOT=jamais
+URL=martinealaplage.fr SCORE=2967
+URL=nubuk.fr SCORE=2774
+MOT=schtroumpfs
+URL=soustitres.fr SCORE=6811
+URL=marienbad.com SCORE=4978
+MOT=turlututu
+Aucun resultat

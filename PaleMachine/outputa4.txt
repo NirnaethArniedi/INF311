@@ -1,0 +1,12 @@
+MOT=tous URL=soustitres.fr SCORE=15495
+MOT=tous URL=jaimeleschiens.fr SCORE=0
+MOT=tous URL=fcbarcelone.com SCORE=0
+MOT=site URL=soustitres.fr SCORE=0
+MOT=site URL=jaimeleschiens.fr SCORE=9072
+MOT=site URL=fcbarcelone.com SCORE=15235
+MOT=belles URL=soustitres.fr SCORE=3099
+MOT=belles URL=jaimeleschiens.fr SCORE=0
+MOT=belles URL=fcbarcelone.com SCORE=0
+MOT=turlututu URL=soustitres.fr SCORE=0
+MOT=turlututu URL=jaimeleschiens.fr SCORE=0
+MOT=turlututu URL=fcbarcelone.com SCORE=0

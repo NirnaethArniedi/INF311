@@ -1,0 +1,15 @@
+URL=soustitres.fr
+  TITRE=tous les soustitres
+  VISITES=92
+  MOTS=[belles]
+  LIENS=[fcbarcelone.com]
+URL=jaimeleschiens.fr
+  TITRE=le site de ceux qui aiment les chiens
+  VISITES=26
+  MOTS=[informations site]
+  LIENS=[soustitres.fr]
+URL=fcbarcelone.com
+  TITRE=site officiel du fc barcelone
+  VISITES=40
+  MOTS=[tourisme]
+  LIENS=[jaimeleschiens.fr soustitres.fr]

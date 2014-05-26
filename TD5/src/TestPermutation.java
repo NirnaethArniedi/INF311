@@ -10,8 +10,9 @@ public class TestPermutation {
 		Permutation.afficheToutesUneParUne(n);
 		TC.println("true");
 		
-		int[] t= {2,1};
+		int[] t= new int[2];
+		TC.println(t[0]+" "+t[1]);
 		t=Permutation.nextPermutation(t);
-		TC.print(t);
+		TC.println(t[0]+" "+t[1]);
 	}
 }
