@@ -22,10 +22,10 @@ public class TestEx6 {
 		TC.println("filtre avec seuil = 0");
 		limousin.filtrerAdmissibles(0);
 		TC.println(limousin);
-		//limousin.filtrerAdmissibles(20);
-		//TC.println(limousin);
-		//limousin.filtrerAdmissibles(0);
-		//TC.println(limousin);
+		limousin.filtrerAdmissibles(20);
+		TC.println(limousin);
+		limousin.filtrerAdmissibles(0);
+		TC.println(limousin);
 	}
 
 }
