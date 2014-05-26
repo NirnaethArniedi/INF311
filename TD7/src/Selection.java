@@ -5,6 +5,12 @@ public class Selection {
 	public static ListeCandidats selectionner(String[] tabFichiers,
 			String ficDesistements, int seuil) {
 		
+		ListeCandidats liste2=new ListeCandidats();
+		for(int i=0; i<tabFichiers.length; i++){
+			ListeCandidats liste1=new ListeCandidats(tabFichiers[i]);
+			liste2.concatener(liste1);
+		}
+		
 		//TODO
 		
 		return null;
