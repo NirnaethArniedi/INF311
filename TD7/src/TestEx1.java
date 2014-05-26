@@ -24,7 +24,7 @@ public class TestEx1 {
 				+ m.suivant.suivant + ".");
 		TC.println();
 		
-		//TC.println("Ainsi, m reference la liste : "+m);
+		TC.println("Ainsi, m reference la liste : "+m);
 		
 	}
 	
