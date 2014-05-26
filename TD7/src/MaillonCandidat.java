@@ -11,4 +11,11 @@ public class MaillonCandidat {
 	public String toString() {
 		return this.contenu + " -> " + this.suivant;
 	}
+	
+	public int nombreDeMaillons(){
+		if(this.suivant==null){
+			return 1;
+		}
+		return 1 + this.suivant.nombreDeMaillons();
+	}
 }
