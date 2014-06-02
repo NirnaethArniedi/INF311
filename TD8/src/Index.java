@@ -3,10 +3,12 @@ import tc.TC;
 public class Index {
     public final String nom;
     public Noeud racine;
+    private Noeud racineFiltre;
     
     public Index(String nom) {
         this.nom = nom;
         this.racine = null; // aucune entrée au début.
+        this.racineFiltre = null;
     }
     
     public String toString( ) {
@@ -19,10 +21,11 @@ public class Index {
     
     public void ajouterMot(String w, int n) {
         // Ajouter un mot w de ligne n à l'index.
-        if(racine == null) // première entrée!
-            racine = new Noeud(new Entree(w,n));
-        else
-            racine.ajouter(w,n);
+        if(!(racineFiltre!=null  &&  racineFiltre.filtrer(w)))
+    		if(racine == null) // première entrée!
+    			racine = new Noeud(new Entree(w,n));
+    		else
+    			racine.ajouter(w,n);
     }
     
     public void ajouterTexte( ) {
@@ -37,7 +40,14 @@ public class Index {
 			nligne++;
 		}
     }
-    
+    public void creerFiltre(String w) {
+        // On cree l'arbre filtre a partir d'un fichier idoine
+		TC.lectureDansFichier(w);
+		while(!TC.finEntree( )) {
+			for(String mot: TC.lireLigne( ).split("[ .,:;!?()\\[\\]\"]+"))
+				ajouterFiltre(mot);
+		}
+    }
     public boolean estOrdonne() {
     	// Renvoie true si l'arbre enraciné dans le noeud this.racine
         // répresente un arbre binaire de recherche correct.
@@ -82,7 +92,12 @@ public class Index {
     public void ajouterFiltre(String w) {
         // Ajouter un filtrage contre le mot w:
         // Desormais, le mot w sera ignoré et ne plus ajouté à l'index.
-        
+    	
+    	if(racineFiltre == null) // première entrée!
+            racineFiltre = new Noeud(new Entree(w));
+        else
+            racineFiltre.ajouterFiltre(w);
         // à compléter...
     }
+    
 }

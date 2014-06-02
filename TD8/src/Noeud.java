@@ -80,6 +80,8 @@ public class Noeud {
         		return;
         	}
     }
+    
+    
 
     public ListeEntrees traverser( ) {
         // Une liste de toutes les entrées dans l'arbre, *en ordre croissant*.
@@ -123,4 +125,51 @@ public class Noeud {
     	return true;
     }
 
+    
+    public void ajouterFiltre(String w) {
+        // Si le mot w est contenu dans l'arbre, on ajoute le numéro de ligne n à l'entrée pour ce mot.
+        // Si le mot w n'a pas encore d'entrée dans l'arbre, alors on crée une nouvelle entrée.
+        
+        int compare = this.contenu.comparer(w);
+        if(compare == 0){
+         	return;
+        }
+        else if(compare < 0){	
+        	if(this.droit == null){
+        		this.droit = new Noeud(new Entree(w));
+        		return;
+        	}
+        	else{
+        		this.droit.ajouterFiltre(w);
+        		return;
+        	}
+        }
+        else
+        	if(this.gauche == null){
+        		this.gauche = new Noeud(new Entree(w) );
+        		return;
+        	}
+        	else{
+        		this.gauche.ajouterFiltre(w);
+        		return;
+        	}
+    }
+    
+    public boolean filtrer(String w) {
+    	int op = this.contenu.comparer(w);
+    	if(op==0){
+    		return true;
+    	}
+    	else if(op<0){
+    		if(this.droit!=null)
+    			return this.droit.filtrer(w);
+    		else return false;
+    	}
+    	else if(this.gauche!=null){
+    		return this.gauche.filtrer(w);
+    	}
+    	else{
+    		return false;
+    	}
+    }
 }
