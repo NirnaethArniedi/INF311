@@ -30,7 +30,7 @@ public class TestExercice5 {
 		// Partie a du test pour Ex. 5
 		TC.println("Test 5a : ");
 		TC.println("Arbre 1 ordonné : " + T1.estOrdonne());
-		T1.dessiner();
+		//T1.dessiner();
 		
 		T1.racine.contenu.mot = "Beta";
 		T1.racine.gauche.contenu.mot = "Gamma";
@@ -38,7 +38,7 @@ public class TestExercice5 {
 		// Partie b du test pour Ex. 5
 		TC.println("Test 5b : ");
 		TC.println("Arbre 2 ordonné : " + T1.estOrdonne());
-		T1.dessiner();
+		//T1.dessiner();
 
 		T1.racine.contenu.mot = "Gamma";
 		T1.racine.gauche.contenu.mot = "Beta";
@@ -49,6 +49,11 @@ public class TestExercice5 {
 		// Partie c du test pour Ex. 5
 		TC.println("Test 5c : ");
 		TC.println("Arbre 3 ordonné : " + T1.estOrdonne());
-		T1.dessiner();
+		//T1.dessiner();
+		TC.lectureDansFichier("proust.txt");
+		Index I = new Index("proust");
+		I.ajouterTexte();
+		TC.println("verne est " + I.estOrdonne());
+		
     }
 }

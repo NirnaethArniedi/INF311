@@ -112,9 +112,14 @@ public class Noeud {
         // Renvoie true si l'arbre enraciné dans ce noeud
         // répresente un arbre binaire de recherche correct.
         // Sinon, renvoie false.
-        
-        // à compléter...
+ 
+    	if((min!=null && this.contenu.comparer(min) <= 0 ) || (max!=null && this.contenu.comparer(max) >= 0))
+    		return false;
     	
+    	if(this.gauche!=null && !this.gauche.estOrdonne(min,this.contenu.mot))
+    		return false;
+    	if(this.droit!=null && !this.droit.estOrdonne(this.contenu.mot, max))
+			return false;
     	return true;
     }
 

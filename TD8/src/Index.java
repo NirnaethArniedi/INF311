@@ -45,7 +45,7 @@ public class Index {
     	if(racine == null)
     		return true;
     	else
-    		return racine.estOrdonne("","");
+    		return racine.estOrdonne(null,null);
     }
     
     public ListeEntiers lignesDe(String w) {
