@@ -1,0 +1,927 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TD 5 - Récursivité</title>
+    <link rev="made" href="mailto:Philippe.Chassignet@polytechnique.fr">
+    <link href="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/td311.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <center>
+      <h1> INF 311 - TD 5 <br>
+        Récursivité </h1>
+    </center>
+    <!--    <center>
+      <h1 class="sousTitre"> </h1>
+    </center>
+-->
+    <h3>Mise en place</h3>
+    <div align="justify"> Commencez par créer un nouveau projet dans
+      Eclipse pour le TD d'aujourd'hui (un rappel de tous les détails
+      est disponible <a href="http://www.enseignement.polytechnique.fr/informatique/INF311/TD_X11-2012/intro_eclipse/demarrer_eclipse.html">ici</a>).
+
+      En bref, il faut&nbsp;:<br>
+      <ul>
+        <li>créer un projet par le menu <i>File</i> … <i>New</i> … <i>Project</i>
+          qui ouvre un dialogue, dans lequel on choisit <i>Java Project</i>&nbsp;;
+
+        </li>
+        <li>choisir le nom du projet (ici <tt>TD5</tt>)&nbsp;; </li>
+        <li>cocher la case <i>Create&nbsp;separate&nbsp;source&nbsp;and&nbsp;output&nbsp;folders</i>&nbsp;;
+
+        </li>
+        <li>puis faire <i>Next...</i>, et permettre à ce projet
+          d'utiliser <tt>TC.jar</tt> et <tt>MacLib.jar</tt> (<i>Add
+            jar...</i> dans l'onglet <i>Libraries</i>); plus d'infos <a href="http://www.enseignement.polytechnique.fr/informatique/INF311/classeTC/TC_eclipse.html">ici</a>.
+        </li>
+      </ul>
+    </div>
+    <p><a name="UPLOAD_LOGIN_FORM"></a></p>
+<form action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#UPLOAD_LOGIN_FORM" method="post" class="EditForm">
+<p>
+<input name="Auth_Action" value="DisConnect" type="hidden">
+Login&nbsp;:&nbsp;augustin.lenormand
+<input value="Déconnecter" style="border-radius: 10px; background: #e0e0e0; text-decoration: underline; border: none;" type="submit">
+</p>
+</form>
+
+    <p>
+      Vous trouverez les résultats de la correction automatique
+      <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/TD5_validation/INF311-cor_5-1.php" target="_blank"><big>ici</big></a><a>.
+      </a></p>
+    <a>
+      <p align="justify"> Durant ce TD, nous allons programmer diverses
+        fonctions de façon <b><i>récursive</i></b>. Ce sera également
+        l'occasion de revoir l'utilisation des chaînes de caractères et
+        de s'entrainer au mode <i>pale machine</i>. </p>
+      <p>Les exercices de ce TD peuvent se <b>traiter de manière
+          indépendante</b> ; néanmoins, on vous demande de résoudre les
+        questions de la partie I (utiles aussi pour la préparation à la
+        Pale Machine), ainsi que : </p>
+      <ul>
+        <li>(au moins) un exercice de la partie II ;</li>
+        <li>(au moins) un exercice de la partie III.</li>
+      </ul>
+      <p></p>
+      <h1 align="center">Partie I (exercices obligatoires)<br>
+      </h1>
+      <h2>Pour s'échauffer<br>
+      </h2>
+      <h3>Exercice 1 : pgcd</h3>
+      <p align="justify">On veut calculer le plus grand commun diviseur
+        (PGCD) de deux entiers positifs ou nuls. Pour cela, on utilisera
+        l'identité suivante :</p>
+      <div align="center"><img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/PGCD.png" height="150"></div>
+      <b>Téléchargez</b> les fichiers suivants : </a>
+    <ul>
+      <a> </a>
+      <li><a> la classe </a><a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/PGCDRec.java"><tt>PGCDRec.java</tt></a>
+        (<u>à compléter</u>) </li>
+      <li> la classe <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/TestPGCDRec.java"><tt>TestPGCDRec.java</tt></a>
+        (pour tester votre code). </li>
+      <!--
+      <li>la classe <a href="src/PGCD.java"><tt>PGCD.java</tt></a> (<u>à compléter</u>)&nbsp;:
+        calcul sur des entiers de petite taille (des <code><b>int</b></code>)<br>
+      </li>
+      <li>la classe <a href="src/BigPGCD.java"><tt>BigPGCD.java</tt></a> (<u>à
+          compléter</u>)&nbsp;: calcul sur des entiers de grande taille
+        (des <code><b>BigInteger</b></code>)</li>
+      <li>la classe <a
+    href="src/TestPgcd.java"><tt>TestPgcd.java</tt></a> : pour
+        tester votre code.</li>
+        -->
+    </ul>
+    <!--
+    <p align="justify"><b>Complétez</b> la méthode <code><b>pgcdRec</b></code>
+      de la classe <code><b>PGCD</b></code> en
+      partant de la définition récursive ci-dessus.
+    </p>
+    -->
+    <p align="justify"> <b>Complétez</b> la méthode <b><code>static
+          int pgcd(int,int)</code></b> de la classe <b><code>PGCDRec</code></b>,
+      en partant de la définition récursive ci-dessus. </p>
+    <!--
+    <p>
+      Le programme <code><b>TestPgcd</b></code> doit alors produire l'affichage
+      suivant : </p>
+    -->
+    <p> Le programme <b><code>TestPGCDRec</code></b> doit alors
+      produire l'affichage suivant : </p>
+    <pre class="output">Test du pgcd euclidien (sur des int)<br>pgcd(1794,2014)=2<br>pgcd(2014,1794)=2<br>pgcd(1794,1794)=1794<br>pgcd(31175,76923689) : 1247<br></pre>
+    <!-- <p>Déposez ici le fichier <tt>PGCD.java</tt>.</p> -->
+    <p>Déposez ici le fichier <tt>PGCDRec.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_1a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_1a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_1a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <p align="justify">On souhaite maintenant manipuler des entiers de
+      grande taille (rappelez-vous que les <code><b>int</b></code> ne
+      permettent de représenter que les entiers de taille au plus 2<sup>31</sup>-1).
+
+
+
+      Pour traiter des entiers de taille arbitraire, on se servira du
+      type prédéfini <code><b>BigInteger</b></code> et de ses méthodes
+      d'objet suivantes, où <code><b>a</b></code> et <code><b>b</b></code>
+      désignent des <code><b>BigInteger</b></code> de valeur <i>a</i>
+      et <i>b</i>&nbsp;: </p>
+    <ul>
+      <li><code><b>a.mod(b)</b></code> qui construit un <code><b>BigInteger</b></code>
+        dont la valeur est <i>a</i> mod <i>b</i>.</li>
+      <li> <code><b>a.equals(b)</b></code> qui vaut <code><b>true</b></code>
+        si <i>a = b</i> et <code><b>false</b></code> sinon. <font color="#ff0000"><b>On ne doit pas</b></font> utiliser <code><b>==</b></code>.
+      </li>
+      <li> <code><b>a.compareTo(b)</b></code> qui vaut 1 si <i>a</i>
+        &gt; <i>b</i>, 0 si <i>a = b</i>, et -1 si <i>b</i> &gt; <i>a</i>.
+      </li>
+    </ul>
+    La classe <b><code>BigInteger</code></b> définit une constante <b><code>BigInteger.ZERO</code></b>
+    qui représente la valeur 0.
+    <p></p>
+    <!-- Vaut mieux utiliser BigInteger.ZERO comme ci-dessus -BS
+    <p>
+    Par ailleurs, la classe <code><b>BigPGCD </b></code>définit une constante de type <code><b>BigInteger</b></code>
+    référencée par <code><b>ZERO</b></code> qui représente la valeur 0.
+    </p>
+    -->
+    <!--
+    <p><b>Complétez</b> la méthode <code><b>pgcd</b></code> de
+      la classe <code><b>PGCDRec</b></code>.</p>
+    -->
+    <p> <b>Complétez</b> la méthode <b><code>static BigInteger
+          pgcd(BigInteger,BigInteger)</code></b> de la classe <b><code>PGCDRec</code></b>.
+    </p>
+    <!--
+    Le programme <code><b>TestPgcd</b></code> produit alors l'affichage
+    suivant :
+    -->
+    <p> Le programme <b><code>TestPGCDRec</code></b> doit alors
+      afficher le suivant : </p>
+    <pre class="output">Test du pgcd euclidien (sur des int)<br>pgcd(1794,2014)=2<br>pgcd(2014,1794)=2<br>pgcd(1794,1794)=1794<br>pgcd(31175,76923689) : 1247<br><br>Test du pgcd euclidien (entiers de grande taille)<br>pgcd(1794,2014)=2<br>pgcd(2014,1794)=2<br>pgcd(1794,1794)=1794<br>a=7866784298331896182823447103457168173160834433872412843806690517<br>b=437774118140441763391042217968619990303018712110465657658812113465<br>pgcd : 96542309483<br></pre>
+    <!-- <p>Déposez ici le fichier <tt>BigPGCD.java</tt>.</p> -->
+    <p> Déposez ici le fichier <tt>PGCDRec.java</tt>. </p>
+    <p>
+<a name="INF311-td_5#ex_1b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_1b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_1b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <h2> Entrainement au mécanisme de la pale machine (1) </h2>
+    <p> On va maintenant lire un fichier d'entrée qui donne des paires
+      d'entiers, et afficher pour chaque paire la valeur du PGCD
+      calculée par la méthode <code><b>pgcd</b></code> de la classe <code><b>PGCDRec</b></code>.
+    </p>
+    <p> Voici un exemple de fichier d'entrée&nbsp;: </p>
+    <pre>7
+9
+21
+18307383776869938388328464270430889064119317604954166483990481090515650083601171136
+3451266172641297317559877141698202372259532678527923430816461380097226814536544
+7866784298331896182823447103457168173160834433872412843806690517
+437774118140441763391042217968619990303018712110465657658812113465
+3451266172641297317559877141698202372259532678527923430816461380097226814536544
+7866784298331896182823447103457168173160834433872412843806690517
+437774118140441763391042217968619990303018712110465657658812113465
+18307383776869938388328464270430889064119317604954166483990481090515650083601171136
+18307383776869938388328464270430889064119317604954166483990481090515650083601171136
+1
+0
+0
+</pre>
+    <p align="justify"> La première ligne indique le nombre <i>n</i> de
+      paires d'entiers à traiter. On trouve ensuite <i>2n</i> lignes,
+      chacune donnant un entier. <br>
+      Dans l'exemple qui est donné, il y a donc 7 paires d'entiers à
+      traiter. La première paire est <i>a</i> = 9 et <i>b</i> = 21
+      dont le pgcd vaut 3, etc. Ainsi, on souhaite que le
+      programme&nbsp;: </p>
+    <pre>import tc.TC;
+public class TestConsole1 {
+  public static void main(String[] args) {
+    TC.lectureDansFichier("entiers.txt");
+    PGCDRec.traiter();<br>  }
+}
+</pre>
+    <p> qui prend ses entrées dans le fichier <tt>entiers.txt</tt>
+      correspondant à l'exemple détaillé ci-dessus, affiche dans la
+      console d'Eclipse le résultat suivant&nbsp;: </p>
+    <pre class="output">pgcd : 3
+pgcd : 423544353463456
+pgcd : 96542309483
+pgcd : 1
+pgcd : 19
+pgcd : 1
+pgcd : 0
+</pre>
+    <p> avec un seul espace de séparation entre les mots et pas d'espace
+      en fin de ligne. Toutes les lignes, <b><i>y compris la dernière</i></b>,
+      sont terminées par un retour à la ligne. <br>
+      Vous devez enregistrer le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/entiers.txt"><tt>entiers.txt</tt></a>
+      à la <b><i>racine</i></b> de votre projet, c'est-à-dire dans le
+      répertoire qui porte le nom du projet (et <b><i>pas</i></b> dans
+      <code><b>src</b></code>). </p>
+    <p> Pour cela, vous <b><i>ne devez pas modifier</i></b> la classe <code><b>TestConsole1</b></code>
+      mais <b><i>compléter</i></b> la méthode <code><b>PGCDRec.traiter()</b></code>.
+    </p>
+    <p><b>Indications (utilisation de la classe TC) :</b> </p>
+    <ul>
+      <li> Il est conseillé de lire l'entrée ligne par ligne avec la
+        fonction <code><b>TC.lireLigne()</b></code> et de <font color="#ff0000"><b><i>ne pas</i></b><b> utiliser</b></font> <code><b>TC.lireInt()</b></code>.
+      </li>
+      <li> Une ligne (par exemple la première) peut être lue et
+        interprétée comme un entier ordinaire (de type <code><b>int</b></code>)
+        à l'aide des instructions&nbsp;:
+        <pre>String ligne = TC.lireLigne();
+int n = Integer.parseInt(ligne);
+</pre>
+      </li>
+      <li> Concernant les lignes suivantes (contenant des entiers de
+        grande taille) on utilisera <code><b>TC.lireLigne()</b></code>
+        et le constructeur de <code><b>BigInteger</b></code> qui prend
+        un <code><b>String</b></code> en paramètre. </li>
+      <li> Les sorties se feront <red>uniquement</red> en utilisant les
+        fonctions <code><b>TC.print(…)</b></code> et <code><b>TC.println(…)</b></code>.
+      </li>
+    </ul>
+    <p>Vous devez ensuite tester <code><b>traiter( )</b></code> avec la
+      classe : </p>
+    <pre>import tc.TC;
+public class Test1 {
+  public static void main(String[] args) {
+    TC.lectureDansFichier("entiers.txt");
+    TC.ecritureDansNouveauFichier("sorties.txt");
+    PGCDRec.traiter();<br>  }
+}
+</pre>
+    qui <b><i>n'affiche rien</i></b> dans la console d'Eclipse mais qui
+    écrit dans le fichier <tt>sorties.txt</tt> les sorties produites
+    par <code><b>PGCD.traiter()</b></code>.
+    <p></p>
+    <p align="justify"> Vous devez enfin comparer votre fichier de
+      sortie <tt>sorties.txt</tt> et le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/sorties_attendues_PGCD.txt"><tt>sorties_attendues_PGCD.txt</tt></a>
+      (à sauvegarder à la racine du projet) comme expliqué au TD3 (cette
+      procédure est aussi décrite <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/Instructions.html"> ici</a>).
+
+
+
+    </p>
+    <p>Déposez ici le fichier <tt>PGCDRec.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_1c"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_1c" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_1c" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <!---    <h3>Solution</h3>
+    <a href="solutions/PGCDRec.java"><tt>PGCDRec.java</tt></a>
+-->
+    <h2>Retour sur les chaînes de caractères</h2>
+    <h3>Exercice 2 : palindromes</h3>
+    <p>Un palindrome est un mot qui se lit indifféremment dans les deux
+      sens. <code><b>KAYAK</b></code>, <code><b>ABBA</b></code> ou <code><b>BOB</b></code>
+      sont des palindromes tandis que <code><b>BOBO</b></code>, <code><b>BOBAR</b></code>
+      ou <code><b>BAOBAB</b></code> n'en sont pas.</p>
+    <p align="justify"> Téléchargez la classe <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Palindromes.java"><tt>Palindromes.java</tt></a> et
+      complétez la fonction <code><b>public static boolean
+          estPalindrome(String mot, int g, int d)</b></code> qui doit
+      retourner <code><b>true</b></code> si et seulement si la partie
+      du <code><b>mot</b></code> comprise entre les positions <code><b>g</b></code>
+      et <code><b>d</b></code> incluses est un palindrome. Cette
+      fonction doit être <b><i>récursive</i></b>, en remarquant que <code><b>KAYAK</b></code>
+      est un palindrome car <code><b>AYA</b></code> est aussi un
+      palindrome, que pour <code><b>BOBAR</b></code> il n'est pas utile
+      de regarder <code><b>OBA</b></code>, etc. </p>
+    <p> <b>Attention</b> : on demande que, lors des appels récursifs,
+      la chaîne <code><b>mot</b></code> reste inchangée; seuls les
+      entiers <code><b>g</b></code> et <code><b>d</b></code> doivent
+      évoluer. L'appel initial, avec <code><b>g=0</b></code> et <code><b>d=mot.length()-1</b></code>,
+      permet de tester le mot complet. Réfléchissez bien aux cas
+      terminaux. </p>
+    <p> <b>Indications</b> : on rappelle que le caractère d'indice <code><b>i</b></code>
+      dans <code><b>s</b></code> est obtenu par <code><b>s.charAt(i)</b></code>;
+      <br>
+      Le type <code><b>char</b></code> est un type primitif, et
+      l'égalité des caractères se teste donc par <code><b>==</b></code>
+      (contrairement aux <code><b>String</b></code> dont l'égalité se
+      teste par <code><b>equals()</b></code>). </p>
+    <p>L'exécution de <tt>Palindrome.java</tt> doit produire
+      l'affichage suivant :</p>
+    <pre class="output">AB n'est pas un palindrome
+BAOBAB n'est pas un palindrome
+KAYAK est un palindrome
+ABBA est un palindrome
+BOBAR n'est pas un palindrome
+ESOPERESTEICIETSEREPOSE est un palindrome
+</pre>
+    <p>Déposez ici le fichier <tt>Palindromes.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_2a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_2a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_2a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <h2> Entrainement au mécanisme de la pale machine (2) </h2>
+    <p> On souhaite maintenant lire un fichier d'entrée qui donne une
+      suite de mots, et n'afficher que les mots de cette suite qui sont
+      des palindromes. </p>
+    <p>Voici un exemple de fichier d'entrée (correspondant au test
+      ci-dessus)&nbsp;: </p>
+    <pre>6
+AB
+BAOBAB
+KAYAK
+ABBA
+BOBAR
+ESOPERESTEICIETSEREPOSE
+</pre>
+    <p> La première ligne indique le nombre <i>n</i> de mots à traiter.
+      On trouve ensuite les <i>n</i> mots, un par ligne. </p>
+    <p> On vous donne le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/mots.txt"><tt>mots.txt</tt></a>
+      que vous devez enregistrer à la <b><i>racine</i></b> de votre
+      projet. On souhaite que le programme&nbsp;: </p>
+    <pre>import tc.TC;
+public class TestConsole2 {
+  public static void main(String[] args) {
+    TC.lectureDansFichier("mots.txt");
+    Palindromes.traiter();
+  }
+}
+</pre>
+    <p> (qui prend ses entrées dans le fichier <tt>mots.txt</tt>)
+      affiche dans la console d'Eclipse le résultat suivant&nbsp;: </p>
+    <pre class="output">KAYAK
+ABBA
+ESOPERESTEICIETSEREPOSE
+</pre>
+    <p>Toutes les lignes, <b><i>y compris la dernière</i></b>, sont
+      terminées par un retour à la ligne. </p>
+    <p> Pour cela, vous <b><i>ne devez pas modifier</i></b> la classe <code><b>TestConsole2</b></code>
+      mais <b><i>compléter</i></b> la méthode <code><b>public static
+          void traiter()</b></code> de la classe <tt>Palindrome.java</tt>.
+    </p>
+    <p><b>Indications&nbsp;:</b> comme dans l'exercice précédent, il est
+      conseillé de lire l'entrée ligne par ligne avec la fonction <code><b>TC.lireLigne()</b></code>
+      et de <b><i>ne pas</i></b> utiliser <code><b>TC.lireInt()</b></code>.
+      Les sorties se feront <i><b>exclusivement</b></i> en utilisant
+      les fonctions <code><b>TC.print(…)</b></code> et <code><b>TC.println(…)</b></code>.
+    </p>
+    <p>Lorsque l'affichage est correct, enregistrez le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/MotsFrancais.txt"><tt>MotsFrancais.txt</tt></a> à la
+      racine de votre projet Eclipse, puis tester avec&nbsp;la
+      classe&nbsp;:</p>
+    <pre>import tc.TC;
+public class Test2 {
+  public static void main(String[] args) {
+    TC.lectureDansFichier("mots.txt");
+    TC.ecritureDansNouveauFichier("sorties_mots.txt");
+    Palindromes.traiter();
+    TC.lectureDansFichier("MotsFrancais.txt");
+    TC.ecritureDansNouveauFichier("sorties_MotsFrancais.txt");
+    Palindromes.traiter();
+  }
+}
+</pre>
+    <p> qui <b><i>n'affiche rien</i></b> dans la console d'Eclipse mais
+      qui écrit&nbsp;: </p>
+    <ul>
+      <li> dans le fichier <tt>sorties_mots.txt</tt> les sorties
+        produites par <code><b>Palindromes.traiter()</b></code> pour le
+        fichier d'entrée <tt>mots.txt</tt>,</li>
+      <li> puis dans le fichier <tt>sorties_MotsFrancais.txt</tt> les
+        sorties produites par <code><b>Palindromes.traiter()</b></code>
+        pour le fichier d'entrée <tt>MotsFrancais.txt</tt>. </li>
+    </ul>
+    <p></p>
+    <p> Vous devez ensuite comparer votre fichier de sortie <tt>sorties_mots.txt</tt>
+      avec le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/sorties_attendues_mots.txt"><tt>sorties_attendues_mots.txt</tt></a>
+      et comparer votre fichier de sortie <tt>sorties_MotsFrancais.txt</tt>
+      avec le fichier <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/sorties_attendues_MotsFrancais.txt"><tt>sorties_attendues_MotsFrancais.txt</tt></a>.
+    </p>
+    <p>Déposez ici le fichier <tt>Palindromes.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_2b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_2b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_2b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <!--    <h3>Solution</h3>
+    <a
+    href="solutions/Palindromes.java"><tt>Palindromes.java</tt></a>.
+--> <br>
+    <!------------------------------------------------------------------------------------------>
+    <hr size="2" width="100%">
+    <h1 align="center">Partie II (exploration combinatoire)</h1>
+    <!------------------------------------------------------------------------------------------>
+    <h2>Un peu de backtracking </h2>
+    <h3>Exercice 3 : Le problème des 8 reines </h3>
+    <p align="justify">On va considérer le problème du placement de <code><b>N</b></code>
+      reines sur un échiquier (de taille <code><b>Nx</b></code><code><b>N</b></code>)
+      de manière à ne pas créer de conflits : deux reines sont <i>en
+        conflit</i> si elles appartiennent à une même ligne, une même
+      colonne ou une même diagonale. </p>
+    <center> <img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/HeightQueens.png" height="300"> </center>
+    <p align="justify"> Pour représenter une configuration de reines sur
+      la grille, on se servira de la classe <code><b>Echiquier</b></code>.
+      Chaque objet de cette classe représente une configuration par une
+      permutation stockée sous forme d'un tableau <code><b>private
+          final int[] positions</b></code> de taille <code><b>N</b></code>
+      : il contient pour chaque reine l'indice de la colonne où elle se
+      trouve. Cette information suffit à caractériser une configuration
+      de manière complète, car chaque reine doit appartenir à une ligne
+      différente : on supposera que la reine d'indice <code><b>i</b></code>
+      appartient à la ligne <code><b>i</b></code>. Sa position est
+      donnée par l'indice de sa colonne, stocké dans <code><b>positions[i]</b></code>.
+    </p>
+    <p>Avant de démarrer, il nous faut quelques notations : </p>
+    <ul>
+      <li> une configuration est dite <i>partielle</i>, si elle
+        contient une reine par ligne dans les <code><b>i</b></code>
+        premières lignes avec <code><b>i</b></code> &lt; <b><code>N</code></b>
+        : il reste donc des reines à insérer. Si <code><b>i</b></code>
+        = <b><code>N</code></b>, on parle de configuration <i>complète</i>.
+      </li>
+      <li>une configuration est <i>extensible</i> si elle est partielle
+        et sans conflits.</li>
+    </ul>
+    <p align="justify"> Pour trouver des configurations complètes, on va
+      procéder <b>récursivement</b>, en ajoutant les reines une par une
+      : si une configuration à <code><b>i</b></code> reines est
+      extensible, alors on génère toutes les configurations avec une <code><b>i+1</b></code><em>-ième</em>
+      reine à la ligne <code><b>i+1</b></code> (en la plaçant dans
+      toutes les colonnes possibles). </p>
+    <center><img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/QueensGeneratorTree.png" height="412" width="629"> <br>
+      Représentation de la structure arborescente (une partie), pour
+      N=4.</center>
+    <!--<b>Remarque:</b><br> Si une
+    configuration à <code><b>i</b></code> reines a des conflits (elle
+    n'est donc pas extensible), inutile alors on peut arreter la
+    récursion.
+  -->
+    <p>La fonction affiche le résultat lorsque <code><b>i</b></code> =
+      <code><b>N</b></code> : la dernière reine est placée sans créer de
+      conflits et une configuration complète à <code><b>N</b></code>
+      reines a été trouvée.</p>
+    <!-- <img alt=""
+    src="files/QueensBackTracking.png" height="398" width="623">-->
+    Téléchargez les classes <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/HuitReines.java"><tt>HuitReines.java</tt></a>
+    et <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Echiquier.java"><tt>Echiquier.java</tt></a> ;
+    complétez la fonction suivante de la classe <code><b>HuitReines</b></code>
+    :
+    <ul>
+      <li><code><b>ajouteNouvelleReine(Echiquier echiquier, int i)</b></code>
+        génère et affiche les configurations sans conflits qui étendent
+        la configuration à <code><b>i</b></code> reines initialement
+        représentée par <code><b>echiquier</b></code>.</li>
+    </ul>
+    <p align="justify"> À partir de la configuration décrite par <code><b>echiquier</b></code>,
+      la fonction <code><b>ajouteNouvelleReine(echiquier, i)</b></code>
+      doit tester successivement toutes les positions possibles pour la
+      reine d'indice <code><b>i</b></code>, vérifier que cela ne crée
+      pas de conflit, puis appeler récursivement <code><b>ajouteNouvelleReine(echiquier,
+
+          i+1)</b></code>. </p>
+    <p><b>Indications</b> : la classe <code><b>Echiquier</b></code> est
+      munie des méthodes et champs suivants : </p>
+    <ul>
+      <li> <code><b>static final int taille</b></code> donne la taille
+        de la grille ; </li>
+      <li><code><b>public void estUneSolution()</b></code> incrémente le
+        nombre de solutions trouvées et permet d'afficher un échiquier ;</li>
+      <li> <code><b>public boolean estEnConflit(i)</b></code> renvoie <code><b>true</b></code>
+        si les reines <code><b>0..i</b></code> ont un conflit ;</li>
+      <li> <code><b>public void placeReine(indiceReine, k)</b></code>
+        place la reine d'indice <code><b>indiceReine</b></code> à la
+        colonne <code><b>k</b></code> ; </li>
+      <li><code><b>public void enleveReine(indiceReine)</b></code>
+        supprime la reine d'indice <code><b>indiceReine</b></code><!-- (cette
+        fonction <b>n'est pas strictement nécessaire</b> pour la
+        résolution de l'exercice)-->.</li>
+    </ul>
+    <p> Ces deux dernières méthodes ne renvoient rien, mais modifient
+      l'objet appelant. </p>
+    <p>
+      L'exécution doit produire l'affichage suivant&nbsp;:
+    </p>
+            <pre class="output"><br>----------------<br>|   | R |   |   |<br>----------------<br>|   |   |   | R |<br>----------------<br>| R |   |   |   |<br>----------------<br>|   |   | R |   |<br>----------------<br><br><br><br>----------------<br>|   |   | R |   |<br>----------------<br>| R |   |   |   |<br>----------------<br>|   |   |   | R |<br>----------------<br>|   | R |   |   |<br>----------------<br><br><br>2 solutions<br>10 solutions<br>724 solutions<br>73712 solutions          </pre>
+
+    <table><tbody><tr><td> Pour un affichage avec animation
+graphique, cliquez <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/HuitReines.html">ici</a> juste après avoir
+déposé votre code <b><tt>HuitReines.java</tt> et testé que tout
+marche correctement.  </b></td> <td align="center" valign="middle" width="20%"><img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/8Reines_im01.png" height="171" width="151"> </td>
+</tr> </tbody> </table>
+
+<p>Lorsque tout fonctionne, déposez
+le fichier <tt>HuitReines.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_3"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_3" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_3" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <!--  <p><h3>Solution</h3> <a
+     href="solutions/HuitReines.java"><tt>HuitReines.java</tt></a>.</p>
+-->
+    <!------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------>
+    <h2>Parcours de labyrinthes</h2>
+    <!------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------>
+    <p><red>Attention</red>, cet exercice utilise <code><b>MacLib</b></code>.</p>
+    <p>Le but de cet exercice est d'écrire un programme permettant de
+      trouver la sortie d'un labyrinthe. On se place dans le cadre d'un
+      labyrinthe rectanglaire entouré d'un mur avec une seule entrée et
+      une seule sortie comme sur la figure suivante, où les murs sont
+      grisés&nbsp;: </p>
+    <p align="center"><img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby1.png" width="500"> </p>
+    Sauvegardez les trois classes suivantes (dans le sous-répertoire <tt>src</tt>)
+    :
+    <ul>
+      <li><a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Labyrinthe.java"><tt>Labyrinthe.java</tt></a> :
+        cette classe permet de construire des labyrinthes selon
+        plusieurs techniques, et de les afficher ; </li>
+      <li><a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Case.java"><tt>Case.java</tt></a> : les objets de
+        cette classe représentent les cases du labyrinthe ; chacune
+        connaît son emplacement et voit les cases voisines ; </li>
+      <li><a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Explorateur.java"><tt>Explorateur.java</tt></a>,
+        à compléter. </li>
+    </ul>
+    ainsi que les fichiers <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/labyrinthe1.txt"><tt>labyrinthe1.txt</tt></a>
+    et <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/files/labyrinthe2.txt"><tt>labyrinthe2.txt</tt></a>
+    (dans le répertoire du projet).
+    <h3>Exercice 4a : trouver les cases accessibles depuis une case
+      donnée</h3>
+    <p>Dans un premier temps, on veut marquer en bleu toutes les cases
+      accessibles depuis l'entrée du <code><b>Labyrinthe</b></code>.</p>
+    <p>La classe <code><b>Case</b></code> est munie des méthodes
+      suivantes : </p>
+    <ul>
+      <li> <code><b>public void marqueVue()</b></code> permet de
+        laisser une trace indiquant que la <code><b>Case</b></code> est
+        maintenant découverte ; graphiquement, cette trace est
+        matérialisée par un carré bleu.</li>
+      <li> <code><b>public boolean dejaVue()</b></code> et <code><b>public
+
+
+
+            boolean estInconnue()</b></code> se basent sur ce marquage
+        pour dire si la <code><b>Case</b></code> a déjà été découverte.</li>
+      <li> <code><b>public Case[] voisines()</b></code> retourne un
+        tableau contenant les références des (au plus 4) <code><b>Case</b></code>s
+        voisines. </li>
+    </ul>
+    et la classe <code><b>Labyrinthe</b></code> est munie d'une méthode
+    <code><b>public Case entree()</b></code>... qui renvoie l'entrée du
+    <code><b>Labyrinthe</b></code>.
+    <p></p>
+    <p>À l'aide de ces méthodes, complétez la méthode <code><b>public
+          void explore()</b></code> de la classe <code><b>Explorateur</b></code>
+      pour qu'elle marque en bleu toutes les <code><b>Case</b></code>s
+      accessibles depuis l'entrée du <code><b>Labyrinthe</b></code>. </p>
+    <p> Pour cela, vous écrirez une méthode auxiliaire <b><i>récursive</i></b>
+      <code><b>public void exploreCase(Case c)</b></code> qui explore
+      toutes les cases accessibles depuis la case <code><b>c</b></code>
+      et les marque en bleu. </p>
+    <p> Faites bien attention aux conditions de terminaison ! En
+      particulier, si vous "découvrez" une case déjà vue, il est inutile
+      (et même contre-indiqué) de refaire l'exploration à partir de
+      cette case&nbsp;! </p>
+    En exécutant <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Test4a.java"><tt>Test4a.java</tt></a>,
+    vous devez obtenir le résultat suivant&nbsp;:
+    <p align="center"><img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby2.png" width="500"> </p>
+    Vous pouvez ensuite essayer avec des labyrinthes construits
+    aléatoirement:
+    <ul>
+      <li> <code><b>public Labyrinthe (int tX, int tY, double p)</b></code>
+        crée un labyrinthe aléatoire de dimensions fixées ; le
+        constructeur procède en tirant à pile ou face sur certaines
+        cases pour déterminer si ce sont des murs ou des couloirs (le
+        paramètre <code><b>p</b></code>, entre 0 et 1, est la
+        probabilité pour chacune de ces cases d'être un mur) ; </li>
+      <li> <code><b>public Labyrinthe (int tX, int tY)</b></code> crée
+        un labyrinthe aléatoire de dimensions fixées tel que, depuis
+        chaque case, il y a un unique chemin vers la sortie. </li>
+    </ul>
+    <p>Quand tout fonctionne, déposez le fichier <tt>Explorateur.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_4a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_4a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_4a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <h3>Exercice 4b : trouver la sortie</h3>
+    On veut maintenant écrire une méthode pour trouver la sortie du
+    labyrinthe (si cela est possible) à partir de l'entrée, et afficher
+    le chemin vers la sortie en vert. On dispose des méthodes
+    supplémentaires suivantes dans la classe <code><b>Case</b></code>&nbsp;:
+
+
+
+
+
+    <ul>
+      <li><code><b>public boolean estSortie()</b></code> teste si la <code><b>Case</b></code>
+        est la sortie du <code><b>Labyrinthe</b></code> ;</li>
+      <li> <code><b>public void marqueImpasse()</b></code> et <code><b>public
+
+
+
+            void marqueChemin()</b></code> laissent une trace indiquant
+        que la <code><b>Case</b></code> est dans une impasse ou sur le
+        chemin menant à la sortie; graphiquement, cette trace est
+        matérialisée par un carré gris ou vert.</li>
+    </ul>
+    <p>À l'aide de ces méthodes, complétez la méthode <code><b>public
+          boolean explorePourSortir()</b></code> de la classe <code><b>Explorateur</b></code>
+      pour qu'elle renvoie <code><b>true</b></code> si et seulement
+      s'il existe un chemin entre la case de départ et la sortie, et
+      dessine ce chemin en vert. </p>
+    <p>Pour cela, vous écrirez une méthode auxiliaire <b><i>récursive</i></b>
+      <code><b>public boolean exploreCasePourSortir(Case c)</b></code>
+      qui, pour déterminer le statut (chemin ou impasse) de la case <code><b>c</b></code>,
+      testera successivement ses voisines (ou seulement les premières si
+      cela suffit à trouver un chemin).
+      Comme <code><b>explore()</b></code>, cette méthode doit d'abord marquer les 
+      cellules visitées comme «&nbsp;vues&nbsp;» (coloriage en bleu à l'aller).
+      C'est au retour que l'on doit décider si une cellule conduit à une impasse 
+      ou si elle appartient au chemin vers la sortie. </p>
+    Quelques étapes de l'exécution de <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Test4b.java"><tt>Test4b.java</tt></a>&nbsp;:
+    <p align="center">
+    <img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby4.png" width="400">
+    <img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby5.png" width="400">
+    </p><p align="center">
+    <img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby6.png" width="400">
+    <img alt="" src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/laby3.png" width="400"> </p>
+    <p>Quand tout fonctionne, déposez le fichier <tt>Explorateur.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_4b"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_4b" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_4b" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <!--    <h3>Exercice 4c : trouver les cases depuis lesquelles on peut sortir</h3>
+    <p>Complétez la méthode <code><b>public void
+        exploreCasesAvecCheminVersSortie()</b></code> qui doit
+      marquer toutes les cases depuis lesquelles on peut sortir du
+      labyrinthe, puis testez-la avec <a
+    href="src/Test4c.java"><tt>Test4c.java</tt></a>.
+    </p>
+    
+    <p>Quand tout fonctionne, déposez le nouveau fichier <tt>Explorateur.java</tt>.</p>
+-->
+    <h4>Remarque culturelle : percolation et effet de seuil</h4>
+    <p>Lancez la méthode
+      <!--<code><b>exploreCasesAvecCheminVersSortie()</b></code> --> <code><b>explore()</b></code>
+      sur des labyrinthes aléatoires assez grands (par exemple <code><b>tX</b></code>
+      = 40 et <code><b>tY</b></code> = 30) et selon plusieurs valeurs
+      de <code><b>p</b></code>, en particulier autour de 0.5. Que
+      remarquez-vous? Pour plus d'information, faites une recherche avec
+      le mot-clé "percolation". </p>
+    <!--     <h3>Solution</h3> <a
+       href="solutions/Explorateur.java">Explorateur.java</a>.
+--> <br>
+    <hr size="2" width="100%">
+    <h1 align="center">Partie III (permutations et parsing)<br>
+    </h1>
+    <h2> Génération de permutations et Décryptage de messages</h2>
+    <h3>Exercice 5a : stockage des permutations de taille fixée dans un
+      (très) grand tableau</h3>
+    <p> On va écrire un programme pour lister toutes les permutations de
+      taille <i>n</i>.</p>
+    <p>Étant donné une permutation <i>p</i> de taille <i>n - 1</i>, on
+      note <i>L</i>(<i>p</i>) la liste des permutations de taille <i>n</i>
+      obtenues à partir de <i>p</i> en insérant l'entrée <i>n</i> en
+      chacune des positions possibles de 0 à <i>n - 1</i>.</p>
+    <p>Par exemple, pour <i>p</i> = {2, 3, 1}, <i>L</i>(<i>p</i>) est
+      composée de {4, 2, 3, 1}, {2, 4, 3, 1}, {2, 3, 4, 1}, et {2, 3, 1,
+      4}.</p>
+    On se convainc facilement que si on a une liste <i>p</i><sub>1</sub>,
+    ..., <i>p</i><sub>(<i>n</i> - 1)!</sub> de toutes les permutations
+    de taille <i>n</i> - 1, alors on obtient une liste de toutes les
+    permutations de taille <i>n</i> en prenant la concaténation des
+    listes <i>L</i>(<i>p</i><sub>1</sub>) à <i>L</i>(<i>p</i><sub>(<i>n</i>
+      - 1)!</sub>).
+    <p> Téléchargez la classe <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Permutation.java"><tt>Permutation.java</tt></a>.
+      En suivant le schéma récursif décrit ci-dessus, complétez la
+      méthode <code><b>public static int[][] listePermutations(int n)</b></code>
+      qui renvoie un tableau de longueur <i>n</i>! contenant toutes les
+      permutations de taille <i>n</i>. </p>
+    <p> En particulier, <code><b>listePermutations(1)</b></code> doit
+      renvoyer {{1}}, <code><b>listePermutations(2)</b></code> doit
+      renvoyer {{2, 1}, {1, 2}}, <code><b>listePermutations(3)</b></code>
+      doit renvoyer {{3, 2, 1}, {2, 3, 1}, {2, 1, 3}, {3, 1, 2}, {1, 3,
+      2}, {1, 2, 3}}, etc... </p>
+    <p> Cette méthode devra utiliser la méthode auxiliaire (à compléter)
+      <code><b>public static int[] inserer(int[] t, int i)</b></code>
+      qui, étant donnés un tableau <code><b>t</b></code> représentant
+      une permutation de taille <code><b>n</b></code> - 1 et un entier
+      <code><b>i</b></code> entre 0 et <code><b>n</b></code> - 1,
+      renvoie le tableau <code><b>tab</b></code> de longueur <code><b>n</b></code>
+      tel que <code><b>tab[0 .. i-1] = t[0 .. i-1]</b></code>, <code><b>tab[i]
+
+
+
+          = n</b></code>, et <code><b>tab[i+1 .. n-1] = tab[i .. n-2]</b></code>.
+      Par exemple, pour <code><b>t</b></code> = {2, 3, 5, 4, 1} et <code><b>i</b></code>
+      = 2, le résultat est {2, 3, 6, 5, 4, 1}. </p>
+    Testez votre méthode en téléchargeant et en exécutant <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/TestPermutation.java"><tt>TestPermutation.java</tt></a>.
+    Changez la valeur de <code><b>n</b></code> dans le <code><b>main</b></code>,
+    par exemple testez avec <code><b>n</b></code> = 12. Que
+    constatez-vous ?
+    <p>Quand tout fonctionne (pour <code><b>n</b></code> = 5), déposez
+      le fichier <tt>Permutation.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_5a"></a>
+</p>
+<form enctype="multipart/form-data" action="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/INF311-td_5-1.php#INF311-td_5#ex_5a" method="post" class="EditForm">
+<p>
+<input name="Upload_Target" value="INF311-td_5#ex_5a" type="hidden">
+<input name="MAX_FILE_SIZE" value="10000000" type="hidden">
+Le nom du fichier à déposer <input name="Upload_File" size="60" style="background: silver; text-decoration: underline; border: none;" type="file">
+<input value="Déposer" style="border-radius: 10px; background: #e0e0e0; font-weight: bold" type="submit">
+<br>
+</p>
+</form>
+
+    <h3> Exercice 5b : application au décryptage de message</h3>
+    <p> </p>
+    <p> Une méthode populaire (voir <a href="http://fr.wikipedia.org/wiki/Chiffrement_par_transposition">cette
+
+
+
+
+        page</a>) pour chiffrer un message consiste à utiliser une
+      permutation (qui est la clé secrète). Plus précisément, si la clé
+      secrète est une permutation de taille <i>n</i>, alors on
+      supposera toujours que le texte chiffré a une longueur multiple de
+      <i>n</i>, et le chiffrement s'opère de la manière suivante&nbsp;:
+    </p>
+    <center> <img src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/message.png" width="900"> </center>
+    <p> On suppose ici que l'on a intercepté un message chiffré et que
+      l'on cherche à en déduire la clé secrète. Dans un premier temps,
+      on suppose que l'on connait aussi la taille <i>n</i> de la
+      permutation clé.</p>
+    <p> </p>
+    <p>Une méthode simple, que nous allons programmer ici, consiste à
+      lister toutes les permutations de taille <i>n</i>, et, pour
+      chaque permutation, à déchiffrer le message en utilisant cette
+      permutation. Il suffit ensuite de sélectionner la (ou les)
+      permutation(s) dont le message déchiffré donne un texte correct,
+      "correct" voulant dire "concaténation de mots apparaissant dans le
+      dictionnaire francais" (cette sélection se fera ici à vue d'oeil
+      mais pourrait aussi être programmée). </p>
+    <p>Téléchargez la classe <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/Decryptage.java"><tt>Decryptage.java</tt></a>
+      et la classe de test <a href="https://www.enseignement.polytechnique.fr/informatique/INF311/TD/td_5/src/TestDecryptage.java"><tt>TestDecryptage.java</tt></a>.
+    </p>
+    <p>Complétez dans <tt>Decryptage.java</tt> la méthode <code><b>public
+
+
+
+
+          static void decodeToutes(String msg, int n)</b></code> pour
+      qu'elle affiche en console de sortie la liste des permutations de
+      taille <i>n</i>, et pour chaque permutation, le déchiffrement
+      correspondant (on vous fournit dans <tt>Decryptage.java</tt> la
+      méthode <code><b>public static void decode(String msg, int[]
+          perm)</b></code> qui affiche la permutation <code><b>perm</b></code>
+      et le message déchiffré correspondant). </p>
+    <!--
+    <p>Quand tout fonctionne, déposez le fichier <tt>Decryptage.java</tt>.</p>
+    -->
+    <h3> Exercice 5c : amélioration en espace mémoire : énumération
+      exhaustive des permutations à la volée</h3>
+    <p> Un inconvénient de la méthode précédente d'énumération
+      exhaustive de permutations est le fait de tout stocker dans un
+      tableau gigantesque (de taille <i>n</i>! * <i>n</i>). </p>
+    <p> En pratique on souhaite plutot énumérer et afficher les
+      permutations à la volée, ce qui fait tomber la mémoire auxiliaire
+      de <i>O</i>(<i>n</i> * <i>n</i>!) à <i>O</i>(<i>n</i>). On les
+      affichera dans le même ordre que celui donné par la méthode <code><b>listePermutations</b></code>.
+    </p>
+    <p> Complétez la méthode <code><b>public static int[]
+          nextPermutation(int[] t)</b></code> de la classe <tt>Permutation.java</tt>&nbsp;:
+
+
+
+
+      cette méthode prend en argument un tableau <code><b>t</b></code>
+      de longueur <i>n</i>, qui représente une permutation <i>p</i> ;
+      si <i>p</i> est la dernière permutation de la liste, <code><b>nextPermutation(t)</b></code>
+      renvoie <code><b>null</b></code> ; sinon <code><b>nextPermutation(t)</b></code>
+      renvoie le tableau représentant la permutation suivante dans la
+      liste. </p>
+    <p> Par exemple, <code><b>nextPermutation({2, 1, 3})</b></code>
+      renvoie <code><b>{3, 1, 2}</b></code>. </p>
+    <p> On s'autorise les effets de bord, c'est à dire que la méthode
+      peut changer des données contenues dans <code><b>t</b></code> et
+      faire <code><b>return t</b></code> à la fin. </p>
+    <p>On utilisera la propriété suivante pour une permutation <i>p</i>
+      de taille <i>n</i>&nbsp;: </p>
+    <ul>
+      <li> si l'entrée <i>n</i> ne se situe pas tout à droite, alors <code><b>nextPermutation(<i>p</i>)</b></code>
+        s'obtient en décalant l'entrée <i>n</i> d'un cran vers la
+        droite ; par exemple&nbsp;: <br>
+        <br>
+        <center> <img src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/fig_next1.png" width="300"> </center>
+        <br>
+      </li>
+      <li> si l'entrée <i>n</i> est tout à droite, alors on note <i>q</i>
+        la permutation de taille <i>n</i> - 1 obtenue en enlevant
+        l'entrée <i>n</i> de <i>p</i> ;
+        <ul>
+          <li> si <code><b>nextPermutation(<i>q</i>)</b></code> est <code><b>null</b></code>,
+            alors <code><b>nextPermutation(<i>p</i>)</b></code> est <code><b>null</b></code>
+            (on est arrivé à la fin de la liste) ; </li>
+          <li> sinon, <code><b>nextPermutation(<i>p</i>)</b></code> est
+            égal à <code><b>nextPermutation(<i>q</i>)</b></code> dans
+            lequel on a inséré l'entrée <i>n</i> au début ; <br>
+            par exemple, next <code><b>nextPermutation({2, 1, 3, 4})</b></code>
+            est <code><b>{4, 3, 1, 2}</b></code> car&nbsp;: <br>
+            <br>
+            <center> <img src="TD%205%20-%20R%C3%A9cursivit%C3%A9_fichiers/fig_next2.png" width="700"> </center>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p> On se convainc assez facilement (par récurrence) que la première
+      permutation de la liste est {<i>n</i>, <i>n</i>-1, ..., 1}, et
+      qu'une boucle démarrant de cette permutation et appelant de
+      manière répétée <code><b>nextPermutation</b></code> parcourt
+      toutes les permutations de taille <i>n</i>. </p>
+    <p> Testez avec <tt>TestPermutation.java</tt> en commentant la
+      seconde ligne et en décommentant la troisième ligne de <code><b>main</b></code>.
+      On vérifiera que pour <code><b>n</b></code> = 12, la mémoire
+      n'explose pas (même si le temps de parcours de toute la boucle
+      reste prohibitif! À ce propos, on pourra interrompre le programme
+      en appuyant sur le carré rouge "Terminate" dans la barre en haut
+      de la console). </p>
+    <p> Complétez également la méthode <code><b>decodeToutesUneParUne(String
+
+
+
+
+          msg, int[] perm)</b></code> de la classe <tt>Decryptage.java</tt>
+      en utilisant des appels à <code><b>nextPermutation</b></code>
+      plutôt qu'un stockage de toutes les permutations dans un tableau
+      (et tester dans <tt>TestDecryptage.java</tt> en
+      décommentant/commentant les lignes adéquates). </p>
+    <p>Quand tout fonctionne, déposez le fichier <tt>Permutation.java</tt>.</p>
+    <p>
+<a name="INF311-td_5#ex_5c"></a>
+</p>
+</body></html>
