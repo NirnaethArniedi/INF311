@@ -34,31 +34,78 @@ public class Noeud {
     
     
     public Entree trouver(String w) {
-    	// L'entrée associée au mot w, si w se trouve dans l'arbre.
-        // Sinon, null est renvoyé.
-        
-        // à compléter...
-        return null;
+    	int op = this.contenu.comparer(w);
+    	if(op==0){
+    		return this.contenu;
+    	}
+    	else if(op<0){
+    		if(this.droit!=null)
+    			return this.droit.trouver(w);
+    		else return null;
+    	}
+    	else if(this.gauche!=null){
+    		return this.gauche.trouver(w);
+    	}
+    	else{
+    		return null;
+    	}
     }
     
     public void ajouter(String w, int n) {
         // Si le mot w est contenu dans l'arbre, on ajoute le numéro de ligne n à l'entrée pour ce mot.
         // Si le mot w n'a pas encore d'entrée dans l'arbre, alors on crée une nouvelle entrée.
         
-        // à compléter...
+        int compare = this.contenu.comparer(w);
+        if(compare == 0){
+         	this.contenu.ajouter(n);
+         	return;
+        }
+        else if(compare < 0){	
+        	if(this.droit == null){
+        		this.droit = new Noeud(new Entree(w,n));
+        		return;
+        	}
+        	else{
+        		this.droit.ajouter(w, n);
+        		return;
+        	}
+        }
+        else
+        	if(this.gauche == null){
+        		this.gauche = new Noeud(new Entree(w,n) );
+        		return;
+        	}
+        	else{
+        		this.gauche.ajouter(w, n);
+        		return;
+        	}
     }
 
     public ListeEntrees traverser( ) {
         // Une liste de toutes les entrées dans l'arbre, *en ordre croissant*.
-        
-        // à compléter...
-    	return null;
+        ListeEntrees liste;
+    	if(this.gauche == null){
+        	liste = new ListeEntrees();
+        }
+        else{
+        	liste = this.gauche.traverser();
+        }
+        liste.ajouterEnQueue(this.contenu);
+        if(this.droit != null){
+        	ListeEntrees liste2 = this.droit.traverser();
+        	liste.concatener(liste2);
+        }
+        return liste;
     }
     
     public void traverserPourImprimer() {
         // Imprimer une liste de toutes les entrées dans l'arbre, *en ordre croissant*.        
-        
-    	// à compléter...    	    	
+        if(this.gauche != null)
+        	this.gauche.traverserPourImprimer();
+        TC.println(this.contenu);
+        if(this.droit != null)
+        	this.droit.traverserPourImprimer();
+        return;
     }
     
     public boolean estOrdonne(String min, String max) {
