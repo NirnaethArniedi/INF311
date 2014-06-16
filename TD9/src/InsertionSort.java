@@ -7,7 +7,7 @@ public class InsertionSort implements SortingAlgorithm {
 
 	final ElementComparator c; // comparator defining a total order
 	final Element[] t; // array of elements to sort
-	Draw d = new Draw("InsertionSort", 200, 200); // useful for drawings and
+	Draw d = new Draw("InsertionSort", 10000, 400); // useful for drawings and
 													// animations
 	public InsertionSort(Element[] t, ElementComparator c) {
 		this.t = t;
@@ -25,6 +25,16 @@ public class InsertionSort implements SortingAlgorithm {
 	}
 
 	public void run() {
+		for(int i = 1; i < t.length; i++){
+			Element tmps = t[i];
+			int k=i;
+			while((k > 0) && (tmps.isSmaller(t[k-1],c))){
+				t[k]=t[k-1];
+				k=k-1;
+			}
+			replace(k,tmps);
+			d.draw(t);
+		}
 	}
 	
 }

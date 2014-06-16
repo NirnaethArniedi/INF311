@@ -7,15 +7,15 @@ import tc.TC;
 public class TestSortingRationals {
 	
 	public static void main(String args[]) {
-		RationalNumber[] numbers=RationalNumber.randomNumbersInInterval(40, 200, 10);
+		RationalNumber[] numbers=RationalNumber.randomNumbersInInterval(1000, 1000, 10);
 		//RationalNumber.printNumbers(numbers);
-		Draw d1=new Draw("Rationnels aleatoires", 200, 200);
+		Draw d1=new Draw("Rationnels aleatoires", 10000, 400);
 		d1.draw(numbers);
 		
 		// choose implementation
 		SortingAlgorithm algo; 
-		algo=new SelectionSort(numbers, new RationalComparator());
-		//algo=new InsertionSort(numbers, new RationalComparator());
+		//algo=new SelectionSort(numbers, new RationalComparator());
+		algo=new InsertionSort(numbers, new RationalComparator());
 		//algo=new MergeSort(numbers, new RationalComparator());
 		
 		// perform sorting
@@ -25,7 +25,7 @@ public class TestSortingRationals {
 		TC.println("Voici les nombres tries (en ordre croissant)");
 		RationalNumber.printNumbers(numbers);
 		
-		Draw d2=new Draw("Nombres tries", 200, 200);
+		Draw d2=new Draw("Nombres tries", 10000, 400);
 		d2.draw(numbers);
 	}
 
