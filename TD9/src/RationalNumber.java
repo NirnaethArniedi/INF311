@@ -63,7 +63,7 @@ public class RationalNumber implements Element {
      */
     public void paint(Draw d, int i) {
     	int height=d.height;
-        Rect rect=new Rect((i*4)+1, height-(int)this.toDouble(), (i+1)*4, height);
+        Rect rect=new Rect(i, height-(int)this.toDouble(), (i+1), height);
         d.g.paintRect(rect);
     }
 

@@ -6,11 +6,11 @@ public class TestingAllAlgorithms {
 
 	
 	public static void main(String args[]) {
-		RationalNumber[] numbers1=RationalNumber.randomNumbersInInterval(50, 200, 10);
+		RationalNumber[] numbers1=RationalNumber.randomNumbersInInterval(1000, 200, 10);
 		RationalNumber[] numbers2=new RationalNumber[numbers1.length];
 		RationalNumber[] numbers3=new RationalNumber[numbers1.length];
 		
-		Draw d1=new Draw("Rationnels aleatoires", 200, 200);
+		Draw d1=new Draw("Rationnels aleatoires", 1000, 200);
 		d1.draw(numbers1);
 
 		for(int i=0;i<numbers1.length;i++) {

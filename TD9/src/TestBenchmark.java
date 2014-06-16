@@ -70,9 +70,9 @@ public class TestBenchmark {
 		for(int i=1;i<=n;i++) {
 			RationalNumber[] numbers=RationalNumber.randomNumbersInInterval(5000*i, 1000, 10);
 			
-			algo=new SelectionSort(numbers, new RationalComparator());
+			//algo=new SelectionSort(numbers, new RationalComparator());
 			//algo=new InsertionSort(numbers, new RationalComparator());
-			//algo=new MergeSort(numbers, new RationalComparator());
+			algo=new MergeSort(numbers, new RationalComparator());
 
 			timings[i-1]=test(algo, numbers.length);
 			graph[i-1]=new Point2D(10.*i, 200.-timings[i-1]/1000.);
