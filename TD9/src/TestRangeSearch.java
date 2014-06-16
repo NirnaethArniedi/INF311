@@ -23,7 +23,8 @@ public class TestRangeSearch {
 		
 		algo.run();
 		int index=search.rangeSearch(points, q, 0, points.length); // first bound of the interval
-			range=Point2D.extractInterval(points, index, points.length);
+		if(index>=0){
+				range=Point2D.extractInterval(points, index, points.length);
 		
 		Draw d1=new Draw("Points", windowSize, windowSize);
 		d1.draw(points);
@@ -37,7 +38,7 @@ public class TestRangeSearch {
 		TC.println("Point requete: "+q);
 		TC.println("Les points avec coordonnees plus grandes ou egales sont");
 		for(int i=0;i<range.length;i++)
-			System.out.println(""+range[i]);
+			System.out.println(""+range[i]);}
 	}
 
 }

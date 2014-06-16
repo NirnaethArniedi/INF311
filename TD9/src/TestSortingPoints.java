@@ -13,7 +13,7 @@ public class TestSortingPoints {
 		
 		Point2D[] points=Point2D.randomPointsInSquare(20, windowSize, 10); // random points in a square
 
-		cX=new CoordinateComparatorX(); // choice of the comparator
+		cX=new CoordinateComparatorY(); // choice of the comparator
 		
 		algo=new SelectionSort(points, cX); // selection sort, increasing x coordinates
 		//algo=new InsertionSort(points, cX); // insertion sort, increasing x coordinates

@@ -15,14 +15,38 @@ public class Search {
 	 * Return the index of e, if e belongs to the array. Otherwise, return -1
 	 */
 	public int binarySearch(Element[] t, Element e, int left, int right) {
-		throw new Error("A completer");
+		if(right==left) return -1;
+		if(right-left==1){
+			if (t[left].equals(e)) return left;
+			else return -1;
+		};
+		//if(e.isSmaller(t[left], c) && t[right-1].isSmaller(e, c)){
+		//	return -1;
+		//}
+		int m = (right-left)/2+left;
+		if(e.isSmaller(t[m], c)){
+			return binarySearch(t,e,left,m);
+		}
+		else return binarySearch(t,e,m,right);
+		//throw new Error("A completer");
 	}
 	
 	/**
 	 * Return the index of the smallest element f such that f>=e
 	 */
 	public int rangeSearch(Element[] t, Element e, int left, int right) {
-		throw new Error("A completer");
+		if(right==left) return left;
+		if(right-left<=1){
+			return left+1;
+		}
+		//if(e.isSmaller(t[left], c)) return left;
+		//if(t[right-1].isSmaller(e, c)) return right;
+		int m = (right-left)/2+left;
+		if(e.isSmaller(t[m], c)){
+			return rangeSearch(t,e,left,m);
+		}
+		else return rangeSearch(t,e,m,right);
+		//throw new Error("A completer");
 	}
 
 	
