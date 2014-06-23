@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import tc.TC;
 
-public class RequeteRealiste {
+public class RequeteParesseuse {
 	
 	public Reseau reseau;
 	public String origine,destination;
@@ -9,7 +9,7 @@ public class RequeteRealiste {
 	public Station[] predecesseurs;
 	public LinkedList<Station> chemin;
 	
-	public RequeteRealiste(Reseau r, String origine, String destination, Tampon t){
+	public RequeteParesseuse(Reseau r, String origine, String destination, Tampon t){
 		this.reseau = r;
 		this.origine = origine;
 		this.destination = destination;
