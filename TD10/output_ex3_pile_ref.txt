@@ -1,0 +1,380 @@
+[La Défense - Grande Arche, 1] : [Esplanade de la Défense, 1]
+[Esplanade de la Défense, 1] : [Pont de Neuilly, 1]
+[Pont de Neuilly, 1] : [Les Sablons, 1]
+[Les Sablons, 1] : [Porte Maillot, 1]
+[Porte Maillot, 1] : [Argentine, 1]
+[Argentine, 1] : [Charles de Gaulle - Étoile, 1]
+[Charles de Gaulle - Étoile, 1] : [Charles de Gaulle - Étoile, 6]
+[George V, 1] : [Charles de Gaulle - Étoile, 1]
+[Franklin D. Roosevelt, 1] : [George V, 1]
+[Champs-Élysées - Clemenceau, 1] : [Franklin D. Roosevelt, 1]
+[Concorde, 1] : [Champs-Élysées - Clemenceau, 1]
+[Tuileries, 1] : [Concorde, 1]
+[Palais Royal - Musée du Louvre, 1] : [Tuileries, 1]
+[Louvre - Rivoli, 1] : [Palais Royal - Musée du Louvre, 1]
+[Châtelet, 1] : [Louvre - Rivoli, 1]
+[Hôtel de Ville, 1] : [Châtelet, 1]
+[Saint-Paul, 1] : [Hôtel de Ville, 1]
+[Bastille, 1] : [Saint-Paul, 1]
+[Gare de Lyon, 1] : [Bastille, 1]
+[Reuilly - Diderot, 1] : [Gare de Lyon, 1]
+[Nation, 1] : [Reuilly - Diderot, 1]
+[Porte de Vincennes, 1] : [Nation, 1]
+[Saint-Mandé - Tourelles, 1] : [Porte de Vincennes, 1]
+[Bérault, 1] : [Saint-Mandé - Tourelles, 1]
+[Château de Vincennes, 1] : [Bérault, 1]
+[Porte Dauphine, 2] : non atteint
+[Victor Hugo, 2] : non atteint
+[Charles de Gaulle - Étoile, 2] : [Charles de Gaulle - Étoile, 6]
+[Ternes, 2] : [Courcelles, 2]
+[Courcelles, 2] : [Monceau, 2]
+[Monceau, 2] : [Villiers, 2]
+[Villiers, 2] : [Rome, 2]
+[Rome, 2] : [Place de Clichy, 2]
+[Place de Clichy, 2] : [Blanche, 2]
+[Blanche, 2] : [Pigalle, 2]
+[Pigalle, 2] : [Anvers, 2]
+[Anvers, 2] : [Barbès - Rochechouart, 2]
+[Barbès - Rochechouart, 2] : [La Chapelle, 2]
+[La Chapelle, 2] : [Stalingrad, 2]
+[Stalingrad, 2] : [Jaurès, 2]
+[Jaurès, 2] : [Colonel Fabien, 2]
+[Colonel Fabien, 2] : [Belleville, 2]
+[Belleville, 2] : [Couronnes, 2]
+[Couronnes, 2] : [Ménilmontant, 2]
+[Ménilmontant, 2] : [Père Lachaise, 2]
+[Père Lachaise, 2] : [Philippe Auguste, 2]
+[Philippe Auguste, 2] : [Alexandre Dumas, 2]
+[Alexandre Dumas, 2] : [Avron, 2]
+[Avron, 2] : [Nation, 2]
+[Nation, 2] : [Nation, 1]
+[Pont de Levallois - Bécon, 3] : [Anatole France, 3]
+[Anatole France, 3] : [Louise Michel, 3]
+[Louise Michel, 3] : [Porte de Champerret, 3]
+[Porte de Champerret, 3] : [Pereire, 3]
+[Pereire, 3] : [Wagram, 3]
+[Wagram, 3] : [Malesherbes, 3]
+[Malesherbes, 3] : [Villiers, 3]
+[Villiers, 3] : [Villiers, 2]
+[Europe, 3] : [Villiers, 3]
+[Saint-Lazare, 3] : [Europe, 3]
+[Havre - Caumartin, 3] : [Saint-Lazare, 3]
+[Opéra, 3] : [Havre - Caumartin, 3]
+[Quatre-Septembre, 3] : non atteint
+[Bourse, 3] : non atteint
+[Sentier, 3] : non atteint
+[Réaumur - Sébastopol, 3] : non atteint
+[Arts et Métiers, 3] : non atteint
+[Temple, 3] : non atteint
+[République, 3] : non atteint
+[Parmentier, 3] : non atteint
+[Rue Saint-Maur, 3] : non atteint
+[Père Lachaise, 3] : [Père Lachaise, 2]
+[Gambetta, 3] : non atteint
+[Porte de Bagnolet, 3] : non atteint
+[Gallieni, 3] : non atteint
+[Gambetta, 3bis] : non atteint
+[Pelleport, 3bis] : non atteint
+[Saint-Fargeau, 3bis] : non atteint
+[Porte des Lilas, 3bis] : non atteint
+[Porte de Clignancourt, 4] : non atteint
+[Simplon, 4] : non atteint
+[Marcadet - Poissonniers, 4] : non atteint
+[Château Rouge, 4] : non atteint
+[Barbès - Rochechouart, 4] : [Barbès - Rochechouart, 2]
+[Gare du Nord, 4] : non atteint
+[Gare de l'Est, 4] : non atteint
+[Château d'Eau, 4] : non atteint
+[Strasbourg - Saint-Denis, 4] : non atteint
+[Réaumur - Sébastopol, 4] : non atteint
+[Étienne Marcel, 4] : non atteint
+[Les Halles, 4] : non atteint
+[Châtelet, 4] : [Châtelet, 1]
+[Cité, 4] : non atteint
+[Saint-Michel, 4] : non atteint
+[Odéon, 4] : non atteint
+[Saint-Germain-des-Prés, 4] : non atteint
+[Saint-Sulpice, 4] : non atteint
+[Saint-Placide, 4] : non atteint
+[Montparnasse - Bienvenüe, 4] : [Montparnasse - Bienvenüe, 6]
+[Vavin, 4] : non atteint
+[Raspail, 4] : [Raspail, 6]
+[Denfert-Rochereau, 4] : [Denfert-Rochereau, 6]
+[Mouton-Duvernet, 4] : non atteint
+[Alésia, 4] : non atteint
+[Porte d'Orléans, 4] : non atteint
+[Bobigny - Pablo Picasso, 5] : non atteint
+[Bobigny - Pantin - Raymond Queneau, 5] : non atteint
+[Église de Pantin, 5] : non atteint
+[Hoche, 5] : non atteint
+[Porte de Pantin, 5] : non atteint
+[Ourcq, 5] : non atteint
+[Laumière, 5] : non atteint
+[Jaurès, 5] : [Jaurès, 2]
+[Stalingrad, 5] : [Stalingrad, 2]
+[Gare du Nord, 5] : non atteint
+[Gare de l'Est, 5] : non atteint
+[Jacques Bonsergent, 5] : non atteint
+[République, 5] : non atteint
+[Oberkampf, 5] : non atteint
+[Richard-Lenoir, 5] : non atteint
+[Bréguet - Sabin, 5] : non atteint
+[Bastille, 5] : [Bastille, 1]
+[Quai de la Rapée, 5] : non atteint
+[Gare d'Austerlitz, 5] : non atteint
+[Saint-Marcel, 5] : non atteint
+[Campo Formio, 5] : non atteint
+[Place d'Italie, 5] : [Place d'Italie, 7]
+[Charles de Gaulle - Étoile, 6] : [Kléber, 6]
+[Kléber, 6] : [Boissière, 6]
+[Boissière, 6] : [Trocadéro, 6]
+[Trocadéro, 6] : [Passy, 6]
+[Passy, 6] : [Bir-Hakeim, 6]
+[Bir-Hakeim, 6] : [Dupleix, 6]
+[Dupleix, 6] : [La Motte-Picquet - Grenelle, 6]
+[La Motte-Picquet - Grenelle, 6] : [Cambronne, 6]
+[Cambronne, 6] : [Sèvres - Lecourbe, 6]
+[Sèvres - Lecourbe, 6] : [Pasteur, 6]
+[Pasteur, 6] : [Montparnasse - Bienvenüe, 6]
+[Montparnasse - Bienvenüe, 6] : [Edgar Quinet, 6]
+[Edgar Quinet, 6] : [Raspail, 6]
+[Raspail, 6] : [Denfert-Rochereau, 6]
+[Denfert-Rochereau, 6] : [Saint-Jacques, 6]
+[Saint-Jacques, 6] : [Glacière, 6]
+[Glacière, 6] : [Corvisart, 6]
+[Corvisart, 6] : [Place d'Italie, 6]
+[Place d'Italie, 6] : [Place d'Italie, 7]
+[Nationale, 6] : [Place d'Italie, 6]
+[Chevaleret, 6] : non atteint
+[Quai de la Gare, 6] : non atteint
+[Bercy, 6] : non atteint
+[Dugommier, 6] : non atteint
+[Daumesnil, 6] : non atteint
+[Bel-Air, 6] : non atteint
+[Picpus, 6] : non atteint
+[Nation, 6] : [Nation, 1]
+[La Courneuve - 8 Mai 1945, 7] : non atteint
+[Fort d'Aubervilliers, 7] : non atteint
+[Aubervilliers - Pantin - Quatre Chemins, 7] : non atteint
+[Porte de la Villette, 7] : non atteint
+[Corentin Cariou, 7] : non atteint
+[Crimée, 7] : non atteint
+[Riquet, 7] : non atteint
+[Stalingrad, 7] : [Stalingrad, 2]
+[Louis Blanc, 7] : non atteint
+[Château-Landon, 7] : non atteint
+[Gare de l'Est, 7] : non atteint
+[Poissonnière, 7] : non atteint
+[Cadet, 7] : non atteint
+[Le Peletier, 7] : non atteint
+[Chaussée d'Antin - La Fayette, 7] : non atteint
+[Opéra, 7] : non atteint
+[Pyramides, 7] : non atteint
+[Palais Royal - Musée du Louvre, 7] : [Palais Royal - Musée du Louvre, 1]
+[Pont Neuf, 7] : non atteint
+[Châtelet, 7] : [Châtelet, 1]
+[Pont Marie, 7] : non atteint
+[Sully - Morland, 7] : non atteint
+[Jussieu, 7] : non atteint
+[Place Monge, 7] : non atteint
+[Censier - Daubenton, 7] : non atteint
+[Les Gobelins, 7] : [Place d'Italie, 7]
+[Place d'Italie, 7] : [Place d'Italie, 7]
+[Tolbiac, 7] : [Place d'Italie, 7]
+[Maison Blanche, 7] : non atteint
+[Porte d'Italie, 7] : non atteint
+[Porte de Choisy, 7] : non atteint
+[Porte d'Ivry, 7] : non atteint
+[Pierre et Marie Curie, 7] : non atteint
+[Mairie d'Ivry, 7] : non atteint
+[Le Kremlin-Bicêtre, 7] : non atteint
+[Villejuif - Léo Lagrange, 7] : non atteint
+[Villejuif - Paul Vaillant-Couturier, 7] : non atteint
+[Villejuif - Louis Aragon, 7] : non atteint
+[Louis Blanc, 7bis] : non atteint
+[Jaurès, 7bis] : [Jaurès, 2]
+[Bolivar, 7bis] : non atteint
+[Buttes Chaumont, 7bis] : non atteint
+[Botzaris, 7bis] : non atteint
+[Place des Fêtes, 7bis] : non atteint
+[Danube, 7bis] : non atteint
+[Pré Saint-Gervais, 7bis] : non atteint
+[Balard, 8] : non atteint
+[Lourmel, 8] : non atteint
+[Boucicaut, 8] : non atteint
+[Félix Faure, 8] : non atteint
+[Commerce, 8] : non atteint
+[La Motte-Picquet - Grenelle, 8] : [La Motte-Picquet - Grenelle, 6]
+[École Militaire, 8] : non atteint
+[La Tour-Maubourg, 8] : non atteint
+[Invalides, 8] : non atteint
+[Concorde, 8] : [Concorde, 1]
+[Madeleine, 8] : non atteint
+[Opéra, 8] : non atteint
+[Richelieu - Drouot, 8] : non atteint
+[Grands Boulevards, 8] : non atteint
+[Bonne Nouvelle, 8] : non atteint
+[Strasbourg - Saint-Denis, 8] : non atteint
+[République, 8] : non atteint
+[Filles du Calvaire, 8] : non atteint
+[Saint-Sébastien - Froissart, 8] : non atteint
+[Chemin Vert, 8] : non atteint
+[Bastille, 8] : [Bastille, 1]
+[Ledru-Rollin, 8] : non atteint
+[Faidherbe - Chaligny, 8] : non atteint
+[Reuilly - Diderot, 8] : [Reuilly - Diderot, 1]
+[Montgallet, 8] : non atteint
+[Daumesnil, 8] : non atteint
+[Michel Bizot, 8] : non atteint
+[Porte Dorée, 8] : non atteint
+[Porte de Charenton, 8] : non atteint
+[Liberté, 8] : non atteint
+[Charenton - Écoles, 8] : non atteint
+[École Vétérinaire de Maisons-Alfort, 8] : non atteint
+[Maisons-Alfort - Stade, 8] : non atteint
+[Maisons-Alfort - Les Juilliottes, 8] : non atteint
+[Créteil - L'Échat, 8] : non atteint
+[Créteil - Université, 8] : non atteint
+[Créteil - Préfecture, 8] : non atteint
+[Pont de Sèvres, 9] : non atteint
+[Billancourt, 9] : non atteint
+[Marcel Sembat, 9] : non atteint
+[Porte de Saint-Cloud, 9] : non atteint
+[Exelmans, 9] : non atteint
+[Michel-Ange - Molitor, 9] : non atteint
+[Michel-Ange - Auteuil, 9] : non atteint
+[Jasmin, 9] : non atteint
+[Ranelagh, 9] : non atteint
+[La Muette, 9] : non atteint
+[Rue de la Pompe, 9] : non atteint
+[Trocadéro, 9] : [Trocadéro, 6]
+[Iéna, 9] : non atteint
+[Alma - Marceau, 9] : non atteint
+[Franklin D. Roosevelt, 9] : [Franklin D. Roosevelt, 1]
+[Saint-Philippe du Roule, 9] : non atteint
+[Miromesnil, 9] : non atteint
+[Saint-Augustin, 9] : [Saint-Lazare, 3]
+[Havre - Caumartin, 9] : [Havre - Caumartin, 3]
+[Chaussée d'Antin - La Fayette, 9] : non atteint
+[Richelieu - Drouot, 9] : non atteint
+[Grands Boulevards, 9] : non atteint
+[Bonne Nouvelle, 9] : non atteint
+[Strasbourg - Saint-Denis, 9] : non atteint
+[République, 9] : non atteint
+[Oberkampf, 9] : non atteint
+[Saint-Ambroise, 9] : non atteint
+[Voltaire, 9] : non atteint
+[Charonne, 9] : non atteint
+[Rue des Boulets, 9] : non atteint
+[Nation, 9] : [Nation, 1]
+[Buzenval, 9] : non atteint
+[Maraîchers, 9] : non atteint
+[Porte de Montreuil, 9] : non atteint
+[Robespierre, 9] : non atteint
+[Croix de Chavaux, 9] : non atteint
+[Mairie de Montreuil, 9] : non atteint
+[Boulogne - Pont de Saint-Cloud, 10] : non atteint
+[Boulogne - Jean Jaurès, 10] : non atteint
+[Michel-Ange - Molitor, 10] : non atteint
+[Chardon Lagache, 10] : non atteint
+[Mirabeau, 10] : non atteint
+[Javel - André Citroën, 10] : non atteint
+[Eglise d'Auteuil, 10] : non atteint
+[Michel-Ange - Auteuil, 10] : non atteint
+[Porte d'Auteuil, 10] : non atteint
+[Charles Michels, 10] : non atteint
+[Avenue Émile Zola, 10] : non atteint
+[La Motte-Picquet - Grenelle, 10] : [La Motte-Picquet - Grenelle, 6]
+[Ségur, 10] : non atteint
+[Duroc, 10] : non atteint
+[Vaneau, 10] : non atteint
+[Sèvres - Babylone, 10] : non atteint
+[Mabillon, 10] : non atteint
+[Odéon, 10] : non atteint
+[Cluny - La Sorbonne, 10] : non atteint
+[Maubert - Mutualité, 10] : non atteint
+[Cardinal Lemoine, 10] : non atteint
+[Jussieu, 10] : non atteint
+[Gare d'Austerlitz, 10] : non atteint
+[Mairie des Lilas, 11] : non atteint
+[Porte des Lilas, 11] : non atteint
+[Télégraphe, 11] : non atteint
+[Place des Fêtes, 11] : non atteint
+[Jourdain, 11] : non atteint
+[Pyrénées, 11] : non atteint
+[Belleville, 11] : [Belleville, 2]
+[Goncourt, 11] : non atteint
+[République, 11] : non atteint
+[Arts et Métiers, 11] : non atteint
+[Rambuteau, 11] : non atteint
+[Hôtel de Ville, 11] : [Hôtel de Ville, 1]
+[Châtelet, 11] : [Châtelet, 1]
+[Porte de la Chapelle, 12] : non atteint
+[Marx Dormoy, 12] : non atteint
+[Marcadet - Poissonniers, 12] : non atteint
+[Jules Joffrin, 12] : non atteint
+[Lamarck - Caulaincourt, 12] : non atteint
+[Abbesses, 12] : non atteint
+[Pigalle, 12] : [Pigalle, 2]
+[Saint-Georges, 12] : non atteint
+[Notre-Dame-de-Lorette, 12] : non atteint
+[Trinité - d'Estienne d'Orves, 12] : non atteint
+[Saint-Lazare, 12] : [Saint-Lazare, 3]
+[Madeleine, 12] : non atteint
+[Concorde, 12] : [Concorde, 1]
+[Assemblée Nationale, 12] : non atteint
+[Solférino, 12] : non atteint
+[Rue du Bac, 12] : non atteint
+[Sèvres - Babylone, 12] : non atteint
+[Rennes, 12] : non atteint
+[Notre-Dame-des-Champs, 12] : non atteint
+[Montparnasse - Bienvenüe, 12] : [Montparnasse - Bienvenüe, 6]
+[Falguière, 12] : non atteint
+[Pasteur, 12] : [Pasteur, 6]
+[Volontaires, 12] : non atteint
+[Vaugirard, 12] : non atteint
+[Convention, 12] : non atteint
+[Porte de Versailles, 12] : non atteint
+[Corentin Celton, 12] : non atteint
+[Mairie d'Issy, 12] : non atteint
+[Saint-Denis - Université, 13] : non atteint
+[Basilique de Saint-Denis, 13] : non atteint
+[Saint-Denis - Porte de Paris, 13] : non atteint
+[Carrefour Pleyel, 13] : non atteint
+[Mairie de Saint-Ouen, 13] : non atteint
+[Garibaldi, 13] : non atteint
+[Porte de Saint-Ouen, 13] : non atteint
+[Guy Môquet, 13] : non atteint
+[Asnières - Gennevilliers - Les Courtilles, 13] : non atteint
+[Les Agnettes, 13] : non atteint
+[Gabriel Péri, 13] : non atteint
+[Mairie de Clichy, 13] : non atteint
+[Porte de Clichy, 13] : non atteint
+[Brochant, 13] : non atteint
+[La Fourche, 13] : non atteint
+[Place de Clichy, 13] : [Place de Clichy, 2]
+[Liège, 13] : non atteint
+[Saint-Lazare, 13] : [Saint-Lazare, 3]
+[Miromesnil, 13] : non atteint
+[Champs-Élysées - Clemenceau, 13] : [Champs-Élysées - Clemenceau, 1]
+[Invalides, 13] : non atteint
+[Varenne, 13] : non atteint
+[Saint-François-Xavier, 13] : non atteint
+[Duroc, 13] : non atteint
+[Montparnasse - Bienvenüe, 13] : [Montparnasse - Bienvenüe, 6]
+[Gaîté, 13] : non atteint
+[Pernety, 13] : non atteint
+[Plaisance, 13] : non atteint
+[Porte de Vanves, 13] : non atteint
+[Malakoff - Plateau de Vanves, 13] : non atteint
+[Malakoff - Rue Étienne Dolet, 13] : non atteint
+[Châtillon - Montrouge, 13] : non atteint
+[Saint-Lazare, 14] : [Saint-Lazare, 3]
+[Madeleine, 14] : non atteint
+[Pyramides, 14] : non atteint
+[Châtelet, 14] : [Châtelet, 1]
+[Gare de Lyon, 14] : [Gare de Lyon, 1]
+[Bercy, 14] : non atteint
+[Cour Saint-Émilion, 14] : non atteint
+[Bibliothèque François Mitterrand, 14] : non atteint
+[Olympiades, 14] : non atteint
