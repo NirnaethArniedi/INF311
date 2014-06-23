@@ -14,12 +14,18 @@ public class Station {
 	}
 
 	public String toString() {
-		// A COMPLETER
-		return null;
+		String sortie="["+this.nom+", "+this.ligne+"]";
+		return sortie;
 	}
 
 	public void afficher() {
-		// A COMPLETER
+		TC.println("Station : "+this.nom);
+		TC.println("Ligne : "+this.ligne);
+		String liste="Stations voisines :";
+		for(Station s : this.voisines){
+			liste=liste+" "+s.toString();
+		}
+		TC.println(liste);
 		return;
 	}
 
