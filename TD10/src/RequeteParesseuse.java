@@ -8,6 +8,7 @@ public class RequeteParesseuse {
 	public Tampon tampon;
 	public Station[] predecesseurs;
 	public LinkedList<Station> chemin;
+	public int[] changements;
 	
 	public RequeteParesseuse(Reseau r, String origine, String destination, Tampon t){
 		this.reseau = r;
@@ -16,6 +17,16 @@ public class RequeteParesseuse {
 		this.tampon = t;
 		this.predecesseurs = new Station[r.taille];
 		this.chemin = new LinkedList<Station>();
+		this.changements = new int[reseau.stations.length];
+	}
+	
+	public void setChangements(Station s, int c){
+		changements[reseau.getId(s)]=c;
+		return;
+	}
+	
+	public int getChangements(Station s){
+		return changements[reseau.getId(s)];
 	}
 	
 	public void setPredecesseur(Station from, Station to){
